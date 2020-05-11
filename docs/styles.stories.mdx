@@ -1,8 +1,6 @@
 import { Meta, Props, Story, Preview } from "@storybook/addon-docs/blocks";
 import { withA11y } from "@storybook/addon-a11y";
 
-import NeApplication from "@/components/NeApplication/NeApplication.vue";
-
 <Meta title="Getting started|Styles" decorators={[withA11y]} />
 
 # Styles
@@ -11,14 +9,13 @@ import NeApplication from "@/components/NeApplication/NeApplication.vue";
 
 You can use following to set element color:
 
-- use `.bv--color-(color)` (for example `.ne-color-red`) to set element background,
+- use `.bv--color-(color)` (for example `.bv--color-red`) to set element background,
 - use `.bv--color-(color)` and `.bv--darken-(1, 2 or 3)` (for example `.bv--darken-2`) to darken selected color,
 - use `.bv--color-(color)` and `.bv--lighten-(1, 2 or 3)` (for example `.bv--lighten-2`) to lighten selected color,
 
 <Preview>
   <Story name="Background color">
     {{
-      components: { NeApplication },
       data() {
         return {
           colors: [
@@ -49,13 +46,13 @@ You can use following to set element color:
         }
       },
       template: `
-        <ne-application>
+        <div>
           <div style="display: flex;flex-wrap: wrap;">
             <div v-for="(color, index) in colors" :key="index" style="width: 300px;">
               <div v-for="i in 7" :key="i" :class="[getColor('bv--color-', color), getShade('bv--', i)]">{{ getColor('.bv--color-', color) }} {{ getShade('.bv--', i) }}</div>
             </div>
           </div>
-        </ne-application>`,
+        </div>`,
     }}
   </Story>
 </Preview>
@@ -71,7 +68,6 @@ You can use following to set element textcolor:
 <Preview>
   <Story name="Text color">
     {{
-      components: { NeApplication },
       data() {
         return {
           colors: [
@@ -102,13 +98,13 @@ You can use following to set element textcolor:
         }
       },
       template: `
-        <ne-application>
+        <div>
           <div style="display: flex;flex-wrap: wrap;">
             <div v-for="(color, index) in colors" :key="index" style="width: 400px;">
               <div v-for="i in 7" :key="i" :class="[getColor('bv--text-color-', color), getShade('bv--text-', i)]">{{ getColor('.bv--text-color-', color) }} {{ getShade('.bv--text-', i) }}</div>
             </div>
           </div>
-        </ne-application>`,
+        </div>`,
     }}
   </Story>
 </Preview>
@@ -124,7 +120,6 @@ You can use following to set element border color:
 <Preview>
   <Story name="Border color">
     {{
-      components: { NeApplication },
       data() {
         return {
           colors: [
@@ -155,13 +150,13 @@ You can use following to set element border color:
         }
       },
       template: `
-        <ne-application>
+        <div>
           <div style="display: flex;flex-wrap: wrap;">
             <div v-for="(color, index) in colors" :key="index" style="width: 300px;">
               <div v-for="i in 7" :key="i" :class="[getColor('bv--border-color-', color), getShade('bv--border-', i)]" style="border-width: 1px; border-style: solid; padding: 5px; margin: 5px;">{{ getColor('.bv---border-color-', color) }} <br> {{ getShade('.bv--border', i) }}</div>
             </div>
           </div>
-        </ne-application>`,
+        </div>`,
     }}
   </Story>
 </Preview>
@@ -188,9 +183,8 @@ You can use following classes to standarize headers appearance:
 <Preview>
   <Story name="Typography">
     {{
-      components: { NeApplication },
       template: `
-        <ne-application>
+        <div>
           <div>
             <div class="bv--display-4">Display-4</div>
             <div class="bv--display-3">Display-3</div>
@@ -205,7 +199,7 @@ You can use following classes to standarize headers appearance:
             <div class="bv--caption">Caption</div>
             <div class="bv--overline">Overline</div>
           </div>
-        </ne-application>`,
+        </div>`,
     }}
   </Story>
 </Preview>
