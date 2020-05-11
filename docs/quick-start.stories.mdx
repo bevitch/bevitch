@@ -1,0 +1,106 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { linkTo } from '@storybook/addon-links';
+
+<Meta title="Getting started|Quick start" />
+
+# Quick start
+
+## Adding library to application
+
+### In your main file import `ne-vue-components` library and inject it to your vue instance:
+
+```ts
+import Vue from 'vue';
+import App from './App.vue';
+import NeVueComponents from 'ne-vue-components';
+
+Vue.use(NeVueComponents);
+
+new Vue({
+  render: h => h(App)
+}).$mount('#app');
+
+```
+
+### Add styles for library components:
+
+```ts
+import Vue from 'vue';
+import App from './App.vue';
+import NeVueComponents from 'ne-vue-components';
+import 'ne-vue-components/dist/lib/ne-vue-components.css';
+
+Vue.use(NeVueComponents);
+
+new Vue({
+  render: h => h(App)
+}).$mount('#app');
+
+```
+
+### Add your custom configuration:
+
+```ts
+import Vue from 'vue';
+import App from './App.vue';
+import NeVueComponents from 'ne-vue-components';
+import 'ne-vue-components/dist/lib/ne-vue-components.css';
+
+const neVueOptions = {
+  dictionary: {
+    search: {
+      search: 'Szukaj', 
+      noMatchingItems: 'Brak pasujących wyników'
+    }
+  }
+};
+
+Vue.use(NeVueComponents, neVueOptions);
+
+new Vue({
+  render: h => h(App)
+}).$mount('#app');
+
+```
+
+## TypeScript support
+
+If you are using TypeScript you can import `CustomOptions` interface to validate your configuration:
+
+```ts
+import Vue from 'vue';
+import App from './App.vue';
+import NeVueComponents from 'ne-vue-components';
+import 'ne-vue-components/dist/lib/ne-vue-components.css';
+import { CustomOptions } from 'ne-vue-components/src/types';
+
+const neVueOptions: CustomOptions = {
+  dictionary: {
+    search: {
+      search: 'Szukaj', 
+      noMatchingItems: 'Brak pasujących wyników'
+    }
+  }
+};
+
+Vue.use(NeVueComponents, neVueOptions);
+
+new Vue({
+  render: h => h(App)
+}).$mount('#app');
+
+```
+
+## Using NeVueComponents
+
+Instruction of using NeVueComponents is available in *Components* section.
+
+## Using directives from NeVueComponents
+
+Instruction of using directives is available in *Direvtives* section.
+
+
+
+
+
+

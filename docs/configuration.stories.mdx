@@ -1,0 +1,147 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { linkTo } from '@storybook/addon-links';
+
+<Meta title="Getting started|Configuration" />
+
+# Configuration
+
+## Setting custom dictionary
+
+Some of components use predefined expressions (for example NeAutocomplete has predefined search placeholder). You can set this expression passing properties to component but it would be uncomfortable to pass the same phrase to each component's instance.
+So you can define your own dictionary for your app:
+
+```ts
+import Vue from 'vue';
+import App from './App.vue';
+import NeVueComponents from 'ne-vue-components';
+import 'ne-vue-components/dist/lib/ne-vue-components.css';
+
+const neVueOptions = {
+  dictionary: {
+    search: {
+      search: 'Szukaj', 
+      noMatchingItems: 'Brak pasujących wyników'
+    }
+  }
+};
+
+Vue.use(NeVueComponents, neVueOptions);
+
+new Vue({
+  render: h => h(App)
+}).$mount('#app');
+
+```
+
+Default dictionary looks as follows:
+```ts
+  dictionary: {
+    search: {
+      search: 'Search',
+      noMatchingItems: 'No matching items'
+    }
+  }
+```
+
+### TypeScript support
+
+If you are using TypeScript you can import `CustomOptions` interface to validate your configuration:
+
+```ts
+import Vue from 'vue';
+import App from './App.vue';
+import NeVueComponents from 'ne-vue-components';
+import 'ne-vue-components/dist/lib/ne-vue-components.css';
+import { CustomOptions } from 'ne-vue-components/src/types';
+
+const neVueOptions: CustomOptions = {
+  dictionary: {
+    search: {
+      search: 'Szukaj', 
+      noMatchingItems: 'Brak pasujących wyników'
+    }
+  }
+};
+
+Vue.use(NeVueComponents, neVueOptions);
+
+new Vue({
+  render: h => h(App)
+}).$mount('#app');
+
+```
+
+## Styles customization
+
+Library has predefined UI but it is configurable.
+If you want to configure appearance of your application you have to redefine sass variables in your root app component.
+You have to import `.scss` file instead of `.css` file suggested earlier to make possible overwriting predefined sass variables.
+
+```html
+<template>
+  <div id="app">
+    <!--  -->
+  </div>
+</template>
+
+<script lang="ts">
+import Vue from 'vue';
+
+export default Vue.extend({
+  name: 'App'
+  // ...
+});
+</script>
+
+<style lang="scss">
+$color-primary: #f99;
+$color-secondary: #f55;
+@import '~ne-vue-components/src/assets/styles.scss';
+</style>
+```
+
+Default settings:
+```scss
+/* colors */
+
+// monochromatic
+$color-black: #000;
+$color-grey--dark: #424242;
+$color-grey--light: #fafafa;
+$color-white: #fff;
+
+// red
+$color-red: #f44336;
+
+// green
+$color-green: #4caf50;
+$color-green--light: #8bc34a;
+
+// blue
+$color-blue: #2196f3;
+$color-blue--indigo: #3f51b5;
+
+//yellow
+$color-yellow: #ffeb3b;
+$color-yellow--amber: #ffc107;
+
+// aliases
+$color-primary: $color-blue--indigo;
+$color-secondary: $color-green--light;
+$color-success: $color-green;
+$color-info: $color-blue;
+$color-warning: $color-yellow--amber;
+$color-error: $color-red;
+
+
+/* fonts */
+
+$font-main: Roboto, sans-serif;
+$font-main-light: Roboto-Light, sans-serif;
+```
+
+
+
+
+
+

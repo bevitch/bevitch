@@ -1,0 +1,24 @@
+@mixin center-transform {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin breakpoint($class) {
+  @if $class == sm {
+    @media (min-width: $sm) {
+      @content;
+    }
+  } @else if $class == md {
+    @media (min-width: $md) {
+      @content;
+    }
+  } @else if $class == lg {
+    @media (min-width: $lg) {
+      @content;
+    }
+  } @else {
+    @warn 'Breakpoint mixin supports: xsm, sm, md, lg';
+  }
+}

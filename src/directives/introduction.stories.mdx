@@ -1,0 +1,44 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Directives|Getting started" />
+
+# Getting started
+
+## How to import directive
+
+If you want to import directive in your component use following syntax:
+
+```ts
+import { ClickOutside } from 'ne-vue-components/dist/directives/directives.common';
+```
+
+and declare these components in your app:
+
+```ts
+export default {
+  //...
+  directives: {
+    ClickOutside
+  },
+  //...
+}
+```
+
+Then you can use these components in your template:
+
+```html
+<template>
+  <div v-click-outside="... (some method)" style="background-color: #000; color: #fff;">
+    Click outside of me and check console
+  </div>
+</template>
+```
+
+## TypeScript support
+
+If you are using TypeScript in your app, you must declare module for this library, for example:
+
+**/src/@types/ne-vue-components/directives.d.ts**:
+```ts
+declare module 'ne-vue-components/dist/directives/directives.common';
+```

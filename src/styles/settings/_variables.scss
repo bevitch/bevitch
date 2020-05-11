@@ -1,0 +1,134 @@
+$font-main: Roboto, sans-serif !default;
+$font-main-light: Roboto-Light, sans-serif !default;
+$font-size-main: 16px !default;
+$line-height-main: 1.5 !default;
+$border-radius-main: 4px !default;
+$hover-transition: all .5s ease-in-out;
+
+$layers: (
+  'dropdown': 10,
+  'modal': 100
+) !default;
+
+$spacer: 4px !default;
+
+//transitions
+$transition-fast-ease: all 0.1s ease;
+
+$font-weights: (
+  'thin': 100,
+  'light': 300,
+  'regular': 400,
+  'medium': 500,
+  'bold': 700,
+  'black': 900,
+) !default;
+
+$heading-font-family: $font-main !default;
+
+$colors: (
+  'grey-alto': $color-grey-alto,
+  'white': $color-white,
+  'grey': $color-grey,
+  'red': $color-red,
+  'green': $color-green,
+  'green-light': $color-green--light,
+  'blue': $color-blue,
+  'blue-indigo': $color-blue--indigo,
+  'yellow': $color-yellow,
+  'yellow-amber': $color-yellow--amber,
+  'primary': $color-primary,
+  'secondary': $color-secondary,
+  'success': $color-success,
+  'info': $color-info,
+  'warning': $color-warning,
+  'error': $color-error,
+  'disabled': $color-disabled
+) !default;
+
+$headings: (
+  'ne--display-4': (
+    'size': 6rem,
+    'weight': 300,
+    'line-height': 6rem,
+    'letter-spacing': -.015625em,
+    'font-family': $heading-font-family,
+  ),
+  'ne--display-3': (
+    'size': 3.75rem,
+    'weight': 300,
+    'line-height': 3.75rem,
+    'letter-spacing': -.0083333333em,
+    'font-family': $heading-font-family,
+  ),
+  'ne--display-2': (
+    'size': 3rem,
+    'weight': 400,
+    'line-height': 3.125rem,
+    'letter-spacing': normal,
+    'font-family': $heading-font-family,
+  ),
+  'ne--display-1': (
+    'size': 2.125rem,
+    'weight': 400,
+    'line-height': 2.5rem,
+    'letter-spacing': .0073529412em,
+    'font-family': $heading-font-family,
+  ),
+  'ne--headline': (
+    'size': 1.5rem,
+    'weight': 400,
+    'line-height': 2rem,
+    'letter-spacing': normal,
+    'font-family': $heading-font-family,
+  ),
+  'ne--title': (
+    'size': 1.25rem,
+    'weight': 500,
+    'line-height': 2rem,
+    'letter-spacing': .0125em,
+    'font-family': $heading-font-family,
+  ),
+  'ne--subtitle-1': (
+    'size': 1rem,
+    'weight': 400,
+    'line-height': 1.75rem,
+    'letter-spacing': .009375em,
+    'font-family': $font-main,
+  ),
+  'ne--subtitle-2': (
+    'size': .875rem,
+    'weight': 500,
+    'line-height': 1.375rem,
+    'letter-spacing': .0071428571em,
+    'font-family': $font-main,
+  ),
+  'ne--body-1': (
+    'size': 1rem,
+    'weight': 400,
+    'letter-spacing': .03125em,
+    'line-height': 1.5rem,
+    'font-family': $font-main,
+  ),
+  'ne--body-2': (
+    'size': .875rem,
+    'weight': 400,
+    'letter-spacing': .0178571429em,
+    'line-height': 1.25rem,
+    'font-family': $font-main,
+  ),
+  'ne--caption': (
+    'size': .75rem,
+    'weight': 400,
+    'letter-spacing': .0333333333em,
+    'line-height': 1.25rem,
+    'font-family': $font-main,
+  ),
+  'ne--overline': (
+    'size': .625rem,
+    'weight': 400,
+    'letter-spacing': .1666666667em,
+    'line-height': 1rem,
+    'font-family': $font-main,
+  ),
+) !default;

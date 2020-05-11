@@ -1,0 +1,211 @@
+import { Meta, Props, Story, Preview } from "@storybook/addon-docs/blocks";
+import { withA11y } from "@storybook/addon-a11y";
+
+import NeApplication from "@/components/NeApplication/NeApplication.vue";
+
+<Meta title="Getting started|Styles" decorators={[withA11y]} />
+
+# Styles
+
+## Background color
+
+You can use following to set element color:
+
+- use `.ne--color-(color)` (for example `.ne-color-red`) to set element background,
+- use `.ne--color-(color)` and `.ne--darken-(1, 2 or 3)` (for example `.ne--darken-2`) to darken selected color,
+- use `.ne--color-(color)` and `.ne--lighten-(1, 2 or 3)` (for example `.ne--lighten-2`) to lighten selected color,
+
+<Preview>
+  <Story name="Background color">
+    {{
+      components: { NeApplication },
+      data() {
+        return {
+          colors: [
+            'grey',
+            'red',
+            'green',
+            'green-light',
+            'blue',
+            'blue-indigo',
+            'yellow',
+            'yellow-amber',
+            'primary',
+            'secondary',
+            'success',
+            'info',
+            'warning',
+            'error',
+          ]
+        }
+      },
+      methods: {
+        getColor(prefix, color) {
+          return `${prefix}${color}`;
+        },
+        getShade(prefix, shade) {
+          const suffix = shade < 4 ? `lighten${shade - 4}` : shade === 4 ? '' : `darken-${shade - 4}`;
+          return suffix.length > 0 ? `${prefix}${suffix}` : '';
+        }
+      },
+      template: `
+        <ne-application>
+          <div style="display: flex;flex-wrap: wrap;">
+            <div v-for="(color, index) in colors" :key="index" style="width: 300px;">
+              <div v-for="i in 7" :key="i" :class="[getColor('ne--color-', color), getShade('ne--', i)]">{{ getColor('.ne--color-', color) }} {{ getShade('.ne--', i) }}</div>
+            </div>
+          </div>
+        </ne-application>`,
+    }}
+  </Story>
+</Preview>
+
+## Text color
+
+You can use following to set element textcolor:
+
+- use `.ne--text-color-(color)` (for example `.ne--text-color-red`) to set element font color,
+- use `.ne--text--color-(color)` and `.ne--text-darken-(1, 2 or 3)` (for example `.ne--text-darken-2`) to darken selected font color,
+- use `.ne--text--color-(color)` and `.ne--text-lighten-(1, 2 or 3)` (for example `.ne--text-lighten-2`) to lighten selected font color
+
+<Preview>
+  <Story name="Text color">
+    {{
+      components: { NeApplication },
+      data() {
+        return {
+          colors: [
+            'grey',
+            'red',
+            'green',
+            'green-light',
+            'blue',
+            'blue-indigo',
+            'yellow',
+            'yellow-amber',
+            'primary',
+            'secondary',
+            'success',
+            'info',
+            'warning',
+            'error',
+          ]
+        }
+      },
+      methods: {
+        getColor(prefix, color) {
+          return `${prefix}${color}`;
+        },
+        getShade(prefix, shade) {
+          const suffix = shade < 4 ? `lighten${shade - 4}` : shade === 4 ? '' : `darken-${shade - 4}`;
+          return suffix.length > 0 ? `${prefix}${suffix}` : '';
+        }
+      },
+      template: `
+        <ne-application>
+          <div style="display: flex;flex-wrap: wrap;">
+            <div v-for="(color, index) in colors" :key="index" style="width: 400px;">
+              <div v-for="i in 7" :key="i" :class="[getColor('ne--text-color-', color), getShade('ne--text-', i)]">{{ getColor('.ne--text-color-', color) }} {{ getShade('.ne--text-', i) }}</div>
+            </div>
+          </div>
+        </ne-application>`,
+    }}
+  </Story>
+</Preview>
+
+## Border color
+
+You can use following to set element border color:
+
+- use `.ne--border-color-(color)` (for example `.ne--border-color-red`) to set element border color,
+- use `.ne--border-color-(color)` and `.ne--border-darken-(1, 2 or 3)` (for example `.ne--border-darken-2`) to darken selected border color,
+- use `.ne--border-color-(color)` and `.ne--border-lighten-(1, 2 or 3)` (for example `.ne--border-lighten-2`) to lighten selected border color
+
+<Preview>
+  <Story name="Border color">
+    {{
+      components: { NeApplication },
+      data() {
+        return {
+          colors: [
+            'grey',
+            'red',
+            'green',
+            'green-light',
+            'blue',
+            'blue-indigo',
+            'yellow',
+            'yellow-amber',
+            'primary',
+            'secondary',
+            'success',
+            'info',
+            'warning',
+            'error',
+          ]
+        }
+      },
+      methods: {
+        getColor(prefix, color) {
+          return `${prefix}${color}`;
+        },
+        getShade(prefix, shade) {
+          const suffix = shade < 4 ? `lighten${shade - 4}` : shade === 4 ? '' : `darken-${shade - 4}`;
+          return suffix.length > 0 ? `${prefix}${suffix}` : '';
+        }
+      },
+      template: `
+        <ne-application>
+          <div style="display: flex;flex-wrap: wrap;">
+            <div v-for="(color, index) in colors" :key="index" style="width: 300px;">
+              <div v-for="i in 7" :key="i" :class="[getColor('ne--border-color-', color), getShade('ne--border-', i)]" style="border-width: 1px; border-style: solid; padding: 5px; margin: 5px;">{{ getColor('.ne---border-color-', color) }} <br> {{ getShade('.ne--border', i) }}</div>
+            </div>
+          </div>
+        </ne-application>`,
+    }}
+  </Story>
+</Preview>
+
+## Typography
+
+You can use following classes to standarize headers appearance:
+
+```
+.ne--display-4
+.ne--display-3
+.ne--display-2
+.ne--display-1
+.ne--headline
+.ne--title
+.ne--subtitle-1
+.ne--subtitle-2
+.ne--body-1
+.ne--body-2
+.ne--caption
+.ne--overline
+```
+
+<Preview>
+  <Story name="Typography">
+    {{
+      components: { NeApplication },
+      template: `
+        <ne-application>
+          <div>
+            <div class="ne--display-4">Display-4</div>
+            <div class="ne--display-3">Display-3</div>
+            <div class="ne--display-2">Display-2</div>
+            <div class="ne--display-1">Display-1</div>
+            <div class="ne--headline">Headline</div>
+            <div class="ne--title">Title</div>
+            <div class="ne--subtitle-1">Subtitle-1</div>
+            <div class="ne--subtitle-2">Subtitle-2</div>
+            <div class="ne--body-1">Body-1</div>
+            <div class="ne--body-2">Body-2</div>
+            <div class="ne--caption">Caption</div>
+            <div class="ne--overline">Overline</div>
+          </div>
+        </ne-application>`,
+    }}
+  </Story>
+</Preview>

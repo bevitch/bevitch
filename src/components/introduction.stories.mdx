@@ -1,0 +1,48 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Components|Getting started" />
+
+# Getting started
+
+## How to import component
+
+If you want to import some components use following syntax:
+
+```ts
+import { BvButton } from 'bevitch';
+```
+
+and declare these components in your app:
+
+```ts
+export default {
+  //...
+  components: {
+    BvButton
+  },
+  //...
+}
+```
+
+Then you can use these components in your template:
+
+```html
+<template>
+  <div>
+    <!-- some code -->
+    <bv-button>Click me!</bv-button>
+    <!-- or -->
+    <BvButton>Click me too! PascalCase is also acceptable</BvButton>
+    <!-- some code -->
+  </div>
+</template>
+```
+
+## TypeScript support
+
+If you are using TypeScript in your app, you must declare module for this library:
+
+**/src/@types/ne-vue-components.d.ts**:
+```ts
+declare module 'ne-vue-components';
+```

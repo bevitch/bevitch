@@ -1,0 +1,68 @@
+{
+  "name": "bevitch",
+  "version": "0.0.1",
+  "main": "./dist/lib-no-vue/bevitch.common.js",
+  "module": "./dist/lib-no-vue/bevitch.common.js",
+  "scripts": {
+    "build": "npm run copy:styles && npm run build:inline-vue && npm run build:no-vue",
+    "copy:styles": "node build/styles-loader.ts",
+    "build:inline-vue": "vue-cli-service build --target lib --name bevitch src/lib-target.ts --dest dist/lib --inline-vue",
+    "build:no-vue": "vue-cli-service build --target lib --name bevitch src/lib-target.ts --dest dist/lib-no-vue",
+    "test:unit": "vue-cli-service test:unit",
+    "lint": "vue-cli-service lint",
+    "storybook:build": "vue-cli-service storybook:build -c config/storybook",
+    "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c config/storybook"
+  },
+  "dependencies": {
+    "core-js": "^3.6.4",
+    "vue": "^2.6.11",
+    "vue-property-decorator": "^8.4.1",
+    "vue-router": "^3.1.6"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^5.3.18",
+    "@storybook/addon-actions": ">=5.3.0",
+    "@storybook/addon-backgrounds": "^5.3.18",
+    "@storybook/addon-docs": ">=5.3.0",
+    "@storybook/addon-knobs": ">=5.3.0",
+    "@storybook/addon-links": ">=5.3.0",
+    "@storybook/addon-notes": ">=5.3.0",
+    "@storybook/addon-viewport": "^5.3.18",
+    "@storybook/vue": ">=5.3.0",
+    "@types/jest": "^24.0.19",
+    "@typescript-eslint/eslint-plugin": "^2.18.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "@vue/cli-plugin-babel": "^4.2.0",
+    "@vue/cli-plugin-eslint": "^4.2.0",
+    "@vue/cli-plugin-typescript": "^4.2.0",
+    "@vue/cli-plugin-unit-jest": "^4.2.0",
+    "@vue/cli-service": "^4.2.0",
+    "@vue/eslint-config-typescript": "^5.0.1",
+    "@vue/test-utils": "1.0.0-beta.31",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.1.2",
+    "fs-extra": "^9.0.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^9.5.0",
+    "node-sass": "^4.12.0",
+    "sass-lint": "^1.13.1",
+    "sass-loader": "^8.0.2",
+    "typescript": "~3.7.5",
+    "vue-cli-plugin-storybook": "^1.2.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run test:unit"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue,ts,tsx}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}
