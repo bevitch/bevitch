@@ -1,8 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`NeButton.vue Should match snapshot 1`] = `
-<button
-  class="ne-button ne-button--md ne-button--color-primary ne-button--light ne-button--elevated ne-button--outlined"
-  type="button"
-/>
-`;

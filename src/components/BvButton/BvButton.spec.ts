@@ -1,9 +1,9 @@
 import { shallowMount, createLocalVue } from '@vue/test-utils';
-import NeButton from './NeButton.vue';
+import BvButton from './BvButton.vue';
 
 const localVue = createLocalVue();
 
-describe('NeButton.vue', () => {
+describe('BvButton.vue', () => {
   let wrapper: any;
 
   const propsData = {
@@ -17,7 +17,7 @@ describe('NeButton.vue', () => {
   };
 
   beforeEach(() => {
-    wrapper = shallowMount(NeButton, {
+    wrapper = shallowMount(BvButton, {
       localVue,
       propsData,
       stubs: {
@@ -29,7 +29,7 @@ describe('NeButton.vue', () => {
   });
 
   it('Should be defined', () => {
-    expect(wrapper.is(NeButton)).not.toBeUndefined();
+    expect(wrapper.is(BvButton)).not.toBeUndefined();
   });
 
   it('Should be Vue instance', () => {
@@ -48,9 +48,9 @@ describe('NeButton.vue', () => {
   });
 
   describe('classes property', () => {
-    it('Should include ne-button--dark class if dark property equals true', () => {
+    it('Should include bv-button--dark class if dark property equals true', () => {
       wrapper.setProps({ dark: true });
-      const result = wrapper.vm.classes.includes('ne-button--dark');
+      const result = wrapper.vm.classes.includes('bv-button--dark');
       expect(result).toEqual(true);
     });
   });

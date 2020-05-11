@@ -41,5 +41,6 @@ module.exports = {
       lines: 80,
       statements: 80
     }
-  }
+  },
+  snapshotResolver: './jest.snapshot-resolver.js'
 };
