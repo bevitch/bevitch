@@ -49,11 +49,10 @@ If you are using TypeScript you can import `CustomOptions` interface to validate
 ```ts
 import Vue from 'vue';
 import App from './App.vue';
-import NeVueComponents from 'ne-vue-components';
-import 'ne-vue-components/dist/lib/ne-vue-components.css';
-import { CustomOptions } from 'ne-vue-components/src/types';
+import Bevitch from 'bevitch';
+import { CustomOptions } from 'bevitch/src/types';
 
-const neVueOptions: CustomOptions = {
+const bevitchOptions: CustomOptions = {
   dictionary: {
     search: {
       search: 'Szukaj', 
@@ -62,7 +61,7 @@ const neVueOptions: CustomOptions = {
   }
 };
 
-Vue.use(NeVueComponents, neVueOptions);
+Vue.use(Bevitch, bevitchOptions);
 
 new Vue({
   render: h => h(App)
@@ -95,7 +94,7 @@ export default Vue.extend({
 <style lang="scss">
 $color-primary: #f99;
 $color-secondary: #f55;
-@import '~ne-vue-components/src/assets/styles.scss';
+@import '~bevitch/src/styles/lib.scss';
 </style>
 ```
 

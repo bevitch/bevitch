@@ -1,6 +1,6 @@
 # Bevitch #
 
-Library with Nowa Era reusable UI components and directives for Vue.js applications
+Library with reusable UI components and directives for Vue.js applications
 
 ### Project structure ###
 
