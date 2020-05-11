@@ -11,9 +11,9 @@ import NeApplication from "@/components/NeApplication/NeApplication.vue";
 
 You can use following to set element color:
 
-- use `.ne--color-(color)` (for example `.ne-color-red`) to set element background,
-- use `.ne--color-(color)` and `.ne--darken-(1, 2 or 3)` (for example `.ne--darken-2`) to darken selected color,
-- use `.ne--color-(color)` and `.ne--lighten-(1, 2 or 3)` (for example `.ne--lighten-2`) to lighten selected color,
+- use `.bv--color-(color)` (for example `.ne-color-red`) to set element background,
+- use `.bv--color-(color)` and `.bv--darken-(1, 2 or 3)` (for example `.bv--darken-2`) to darken selected color,
+- use `.bv--color-(color)` and `.bv--lighten-(1, 2 or 3)` (for example `.bv--lighten-2`) to lighten selected color,
 
 <Preview>
   <Story name="Background color">
@@ -52,7 +52,7 @@ You can use following to set element color:
         <ne-application>
           <div style="display: flex;flex-wrap: wrap;">
             <div v-for="(color, index) in colors" :key="index" style="width: 300px;">
-              <div v-for="i in 7" :key="i" :class="[getColor('ne--color-', color), getShade('ne--', i)]">{{ getColor('.ne--color-', color) }} {{ getShade('.ne--', i) }}</div>
+              <div v-for="i in 7" :key="i" :class="[getColor('bv--color-', color), getShade('bv--', i)]">{{ getColor('.bv--color-', color) }} {{ getShade('.bv--', i) }}</div>
             </div>
           </div>
         </ne-application>`,
@@ -64,9 +64,9 @@ You can use following to set element color:
 
 You can use following to set element textcolor:
 
-- use `.ne--text-color-(color)` (for example `.ne--text-color-red`) to set element font color,
-- use `.ne--text--color-(color)` and `.ne--text-darken-(1, 2 or 3)` (for example `.ne--text-darken-2`) to darken selected font color,
-- use `.ne--text--color-(color)` and `.ne--text-lighten-(1, 2 or 3)` (for example `.ne--text-lighten-2`) to lighten selected font color
+- use `.bv--text-color-(color)` (for example `.bv--text-color-red`) to set element font color,
+- use `.bv--text--color-(color)` and `.bv--text-darken-(1, 2 or 3)` (for example `.bv--text-darken-2`) to darken selected font color,
+- use `.bv--text--color-(color)` and `.bv--text-lighten-(1, 2 or 3)` (for example `.bv--text-lighten-2`) to lighten selected font color
 
 <Preview>
   <Story name="Text color">
@@ -105,7 +105,7 @@ You can use following to set element textcolor:
         <ne-application>
           <div style="display: flex;flex-wrap: wrap;">
             <div v-for="(color, index) in colors" :key="index" style="width: 400px;">
-              <div v-for="i in 7" :key="i" :class="[getColor('ne--text-color-', color), getShade('ne--text-', i)]">{{ getColor('.ne--text-color-', color) }} {{ getShade('.ne--text-', i) }}</div>
+              <div v-for="i in 7" :key="i" :class="[getColor('bv--text-color-', color), getShade('bv--text-', i)]">{{ getColor('.bv--text-color-', color) }} {{ getShade('.bv--text-', i) }}</div>
             </div>
           </div>
         </ne-application>`,
@@ -117,9 +117,9 @@ You can use following to set element textcolor:
 
 You can use following to set element border color:
 
-- use `.ne--border-color-(color)` (for example `.ne--border-color-red`) to set element border color,
-- use `.ne--border-color-(color)` and `.ne--border-darken-(1, 2 or 3)` (for example `.ne--border-darken-2`) to darken selected border color,
-- use `.ne--border-color-(color)` and `.ne--border-lighten-(1, 2 or 3)` (for example `.ne--border-lighten-2`) to lighten selected border color
+- use `.bv--border-color-(color)` (for example `.bv--border-color-red`) to set element border color,
+- use `.bv--border-color-(color)` and `.bv--border-darken-(1, 2 or 3)` (for example `.bv--border-darken-2`) to darken selected border color,
+- use `.bv--border-color-(color)` and `.bv--border-lighten-(1, 2 or 3)` (for example `.bv--border-lighten-2`) to lighten selected border color
 
 <Preview>
   <Story name="Border color">
@@ -158,7 +158,7 @@ You can use following to set element border color:
         <ne-application>
           <div style="display: flex;flex-wrap: wrap;">
             <div v-for="(color, index) in colors" :key="index" style="width: 300px;">
-              <div v-for="i in 7" :key="i" :class="[getColor('ne--border-color-', color), getShade('ne--border-', i)]" style="border-width: 1px; border-style: solid; padding: 5px; margin: 5px;">{{ getColor('.ne---border-color-', color) }} <br> {{ getShade('.ne--border', i) }}</div>
+              <div v-for="i in 7" :key="i" :class="[getColor('bv--border-color-', color), getShade('bv--border-', i)]" style="border-width: 1px; border-style: solid; padding: 5px; margin: 5px;">{{ getColor('.bv---border-color-', color) }} <br> {{ getShade('.bv--border', i) }}</div>
             </div>
           </div>
         </ne-application>`,
@@ -171,18 +171,18 @@ You can use following to set element border color:
 You can use following classes to standarize headers appearance:
 
 ```
-.ne--display-4
-.ne--display-3
-.ne--display-2
-.ne--display-1
-.ne--headline
-.ne--title
-.ne--subtitle-1
-.ne--subtitle-2
-.ne--body-1
-.ne--body-2
-.ne--caption
-.ne--overline
+.bv--display-4
+.bv--display-3
+.bv--display-2
+.bv--display-1
+.bv--headline
+.bv--title
+.bv--subtitle-1
+.bv--subtitle-2
+.bv--body-1
+.bv--body-2
+.bv--caption
+.bv--overline
 ```
 
 <Preview>
@@ -192,18 +192,18 @@ You can use following classes to standarize headers appearance:
       template: `
         <ne-application>
           <div>
-            <div class="ne--display-4">Display-4</div>
-            <div class="ne--display-3">Display-3</div>
-            <div class="ne--display-2">Display-2</div>
-            <div class="ne--display-1">Display-1</div>
-            <div class="ne--headline">Headline</div>
-            <div class="ne--title">Title</div>
-            <div class="ne--subtitle-1">Subtitle-1</div>
-            <div class="ne--subtitle-2">Subtitle-2</div>
-            <div class="ne--body-1">Body-1</div>
-            <div class="ne--body-2">Body-2</div>
-            <div class="ne--caption">Caption</div>
-            <div class="ne--overline">Overline</div>
+            <div class="bv--display-4">Display-4</div>
+            <div class="bv--display-3">Display-3</div>
+            <div class="bv--display-2">Display-2</div>
+            <div class="bv--display-1">Display-1</div>
+            <div class="bv--headline">Headline</div>
+            <div class="bv--title">Title</div>
+            <div class="bv--subtitle-1">Subtitle-1</div>
+            <div class="bv--subtitle-2">Subtitle-2</div>
+            <div class="bv--body-1">Body-1</div>
+            <div class="bv--body-2">Body-2</div>
+            <div class="bv--caption">Caption</div>
+            <div class="bv--overline">Overline</div>
           </div>
         </ne-application>`,
     }}

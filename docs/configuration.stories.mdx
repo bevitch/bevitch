@@ -13,10 +13,9 @@ So you can define your own dictionary for your app:
 ```ts
 import Vue from 'vue';
 import App from './App.vue';
-import NeVueComponents from 'ne-vue-components';
-import 'ne-vue-components/dist/lib/ne-vue-components.css';
+import Bevitch from 'bevitch';
 
-const neVueOptions = {
+const bevitchOptions = {
   dictionary: {
     search: {
       search: 'Szukaj', 
@@ -25,7 +24,7 @@ const neVueOptions = {
   }
 };
 
-Vue.use(NeVueComponents, neVueOptions);
+Vue.use(Bevitch, bevitchOptions);
 
 new Vue({
   render: h => h(App)
