@@ -2,12 +2,15 @@
 
 // typography
 @each $name, $heading in $headings {
-  .#{$name} {
+  .bv--#{$name} {
     font-size: map-get($heading, 'size');
     font-weight: map-get($heading, 'weight');
     line-height: map-get($heading, 'line-height');
     letter-spacing: map-get($heading, 'letter-spacing');
     font-family: map-get($heading, 'font-family');
+    @include breakpoint('md') {
+      font-size: map-get($heading, 'size-md');
+    }
   }
 }
 
