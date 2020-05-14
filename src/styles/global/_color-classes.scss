@@ -1,0 +1,63 @@
+.bv--color-white {
+  background-color: $color-white;
+}
+.bv--color-black {
+  background-color: $color-black;
+}
+.bv--text-color-white {
+  color: $color-white;
+}
+.bv--text-color-black {
+  color: $color-black;
+}
+
+@each $name, $color in $colors {
+  $colors-mods: (
+    'darken-1': darken($color, 10%),
+    'darken-2': darken($color, 20%),
+    'darken-3': darken($color, 30%),
+    'lighten-1': lighten($color, 10%),
+    'lighten-2': lighten($color, 20%),
+    'lighten-3': lighten($color, 30%),
+  );
+
+  .bv--color-#{$name} {
+    background-color: $color;
+    @each $mod-name, $mod in $colors-mods {
+      &.bv--#{$mod-name} {
+        background-color: $mod;
+        @if $mod-name == darken-1 or $mod-name == darken-2 or $mod-name == darken-3 {
+          color: $color-theme-light;
+        }
+      }
+    }
+  }
+  .bv--text-color-#{$name} {
+    color: $color;
+    @each $mod-name, $mod in $colors-mods {
+      &.bv--text-#{$mod-name} {
+        color: $mod;
+      }
+    }
+  }
+  .bv--border-color-#{$name} {
+    border-color: $color;
+    @each $mod-name, $mod in $colors-mods {
+      &.bv--border-#{$mod-name} {
+        border-color: $mod;
+      }
+    }
+  }
+  .bv--hover-color-#{$name} {
+    &:hover {
+      background-color: $color;
+    }
+    @each $mod-name, $mod in $colors-mods {
+      &.bv--hover-#{$mod-name} {
+        &:hover {
+          background-color: $mod;
+        }
+      }
+    }
+  }
+}
