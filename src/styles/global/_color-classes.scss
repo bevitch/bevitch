@@ -1,31 +1,3 @@
-@import '../styles';
-
-// typography
-@each $name, $heading in $headings {
-  .bv--#{$name} {
-    font-size: map-get($heading, 'size');
-    font-weight: map-get($heading, 'weight');
-    line-height: map-get($heading, 'line-height');
-    letter-spacing: map-get($heading, 'letter-spacing');
-    font-family: map-get($heading, 'font-family');
-    @include breakpoint('md') {
-      font-size: map-get($heading, 'size-md');
-    }
-  }
-}
-
-.bv--theme-light {
-  color: $color-theme-light-font;
-  background-color: $color-theme-light;
-  border-color: $color-theme-light-font;
-}
-.bv--theme-dark {
-  color: $color-theme-dark-font;
-  background-color: $color-theme-dark;
-  border-color: $color-theme-dark-font;
-}
-
-// colors
 .bv--color-white {
   background-color: $color-white;
 }
