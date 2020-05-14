@@ -10,105 +10,53 @@
 .bv--text-color-black {
   color: $color-black;
 }
+
 @each $name, $color in $colors {
+  $colors-mods: (
+    'darken-1': darken($color, 10%),
+    'darken-2': darken($color, 20%),
+    'darken-3': darken($color, 30%),
+    'lighten-1': lighten($color, 10%),
+    'lighten-2': lighten($color, 20%),
+    'lighten-3': lighten($color, 30%),
+  );
+
   .bv--color-#{$name} {
     background-color: $color;
-    &.bv--darken-1 {
-      background-color: darken($color, 10%);
-      color: $color-theme-light;
-    }
-    &.bv--darken-2 {
-      background-color: darken($color, 20%);
-      color: $color-theme-light;
-    }
-    &.bv--darken-3 {
-      background-color: darken($color, 30%);
-      color: $color-theme-light;
-    }
-    &.bv--lighten-1 {
-      background-color: lighten($color, 10%);
-    }
-    &.bv--lighten-2 {
-      background-color: lighten($color, 20%);
-    }
-    &.bv--lighten-3 {
-      background-color: lighten($color, 30%);
+    @each $mod-name, $mod in $colors-mods {
+      &.bv--#{$mod-name} {
+        background-color: $mod;
+        @if $mod-name == darken-1 or $mod-name == darken-2 or $mod-name == darken-3 {
+          color: $color-theme-light;
+        }
+      }
     }
   }
   .bv--text-color-#{$name} {
     color: $color;
-    &.bv--text-darken-1 {
-      color: darken($color, 10%);
-    }
-    &.bv--text-darken-2 {
-      color: darken($color, 20%);
-    }
-    &.bv--text-darken-3 {
-      color: darken($color, 30%);
-    }
-    &.bv--text-lighten-1 {
-    color: lighten($color, 10%);
-    }
-    &.bv--text-lighten-2 {
-      color: lighten($color, 20%);
-    }
-    &.bv--text-lighten-3 {
-      color: lighten($color, 30%);
+    @each $mod-name, $mod in $colors-mods {
+      &.bv--text-#{$mod-name} {
+        color: $mod;
+      }
     }
   }
   .bv--border-color-#{$name} {
     border-color: $color;
-    &.bv--border-darken-1 {
-      border-color: darken($color, 10%);
-    }
-    &.bv--border-darken-2 {
-      border-color: darken($color, 20%);
-    }
-    &.bv--border-darken-3 {
-      border-color: darken($color, 30%);
-    }
-    &.bv--border-lighten-1 {
-      border-color: lighten($color, 10%);
-    }
-    &.bv--border-lighten-2 {
-      border-color: lighten($color, 20%);
-    }
-    &.bv--border-lighten-3 {
-      border-color: lighten($color, 30%);
+    @each $mod-name, $mod in $colors-mods {
+      &.bv--border-#{$mod-name} {
+        border-color: $mod;
+      }
     }
   }
   .bv--hover-color-#{$name} {
     &:hover {
       background-color: $color;
     }
-    &.bv--hover-darken-1 {
-      &:hover {
-        background-color: darken($color, 10%);
-      }
-    }
-    &.bv--hover-darken-2 {
-      &:hover {
-        background-color: darken($color, 20%);
-      }
-    }
-    &.bv--hover-darken-3 {
-      &:hover {
-        background-color: darken($color, 30%);
-      }
-    }
-    &.bv--hover-lighten-1 {
-      &:hover {
-        background-color: lighten($color, 10%);
-      }
-    }
-    &.bv--hover-lighten-2 {
-      &:hover {
-        background-color: lighten($color, 20%);
-      }
-    }
-    &.bv--hover-lighten-3 {
-      &:hover {
-        background-color: lighten($color, 30%);
+    @each $mod-name, $mod in $colors-mods {
+      &.bv--hover-#{$mod-name} {
+        &:hover {
+          background-color: $mod;
+        }
       }
     }
   }
