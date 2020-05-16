@@ -1,0 +1,12 @@
+@import '../../styles/styles';
+
+.bv-app {
+  font-family: $font-main;
+  line-height: $line-height-main;
+}
+
+@media print and (min--moz-device-pixel-ratio: 0) {
+  .bv-app {
+    display: block;
+  }
+}
