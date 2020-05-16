@@ -1,0 +1,26 @@
+@import '../../styles/styles';
+
+.bv-content-wrapper {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  @include breakpoint('md') {
+    width: $md;
+  }
+  @include breakpoint('lg') {
+    width: $lg;
+  }
+
+  &--full-width {
+    @include breakpoint('md') {
+      width: 100%;
+    }
+    @include breakpoint('lg') {
+      width: 100%;
+    }
+  }
+
+  &--with-paddings {
+    padding: 0 $layout-spacer;
+  }
+}
