@@ -1,5 +1,5 @@
 {
-  "name": "bevitch",
+  "name": "@bevitch/bevitch",
   "version": "0.0.1",
   "main": "./dist/lib-no-vue/bevitch.common.js",
   "module": "./dist/lib-no-vue/bevitch.common.js",
@@ -63,5 +63,26 @@
       "vue-cli-service lint",
       "git add"
     ]
-  }
+  },
+  "description": "Library with reusable UI components and directives for Vue.js applications",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bevitch/bevitch.git"
+  },
+  "keywords": [
+    "ui",
+    "framework",
+    "vue",
+    "library",
+    "components"
+  ],
+  "author": "beVitch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bevitch/bevitch/issues"
+  },
+  "homepage": "https://github.com/bevitch/bevitch#readme"
 }
