@@ -1,52 +1,55 @@
 // monochromatic
 $color-black: #000 !default;
-$color-grey--dark: #424242 !default;
-$color-grey: #888 !default;
-$color-grey--light: #d9d9d9 !default;
-$color-grey--scorpion: #5d5d5d !default;
-$color-grey--mine-shaft: #272727 !default;
-$color-grey-ebony: #2c3039 !default;
-$color-grey-silver-chalice: #aaa !default;
-$color-grey-wild-sand: #f5f5f5 !default;
 $color-white: #fff !default;
+$color-grey: #808080 !default;
+$color-grey-variant: #a4ada4 !default;
 
 // red
-$color-red: #f44336 !default;
+$color-red: #ea1c0d !default;
+$color-red-variant: #910000 !default;
 
 // green
-$color-green: #4caf50 !default;
-$color-green--light: #8bc34a !default;
-$color-green--jungle: #25af74 !default;
+$color-green: #8bc34a !default;
+$color-green-variant: #4caf50 !default;
 
 // blue
-$color-blue: #2196f3 !default;
-$color-blue--jelly-bean: #2b7ba7 !default;
-$color-blue--indigo: #3f51b5 !default;
-$color-blue-denim: #1976d2 !default;
+$color-blue: #2b7ba7 !default;
+$color-blue-variant: #3f51b5 !default;
 
 //yellow
-$color-yellow: #ffeb3b !default;
-$color-yellow--amber: #ffc107 !default;
+$color-yellow: #ffff00 !default;
+$color-yellow-variant: #ffc107 !default;
 
-//grey
-$color-grey-alto: #d7d7d7 !default;
+//orange
+$color-orange: #ff9508 !default;
+$color-orange-variant: #ff4e08 !default;
+
+// purple
+$color-purple: #8c0aa8 !default;
+$color-purple-variant: #db085d !default;
+
+// beige
+$color-beige: #d7aa5c !default;
+$color-beige-variant: #ba6b36 !default;
+
+//translucent
+$color-translucent: rgba(0,0,0,.41) !default;
 
 // aliases
-$color-primary: $color-blue--jelly-bean !default;
-$color-secondary: $color-green--jungle !default;
+$color-primary: $color-blue !default;
+$color-primary-variant: $color-blue !default;
+$color-secondary: $color-orange !default;
+$color-secondary-variant: $color-orange-variant !default;
 $color-success: $color-green !default;
 $color-info: $color-blue !default;
-$color-warning: $color-yellow--amber !default;
+$color-warning: $color-yellow-variant !default;
 $color-error: $color-red !default;
-$color-link: $color-blue-denim !default;
-$color-disabled: $color-grey-alto !default;
+$color-link: $color-blue !default;
+$color-disabled: $color-grey !default;
 
 //themes
-$color-theme-dark: $color-grey--mine-shaft !default;
-$color-theme-dark-secondary: $color-grey-silver-chalice;
-$color-theme-light: $color-grey-wild-sand !default;
+$color-theme-dark: darken($color-grey, 30%) !default;
 $color-theme-dark-font: $color-white !default;
-$color-theme-light-font: $color-grey--scorpion !default;
+$color-theme-light: $color-white !default;
+$color-theme-light-font: $color-grey !default;
 
-//transparent
-$color-translucent: rgba(0,0,0,.41) !default;

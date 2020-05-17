@@ -1,5 +1,6 @@
 import { Meta, Props, Story, Preview } from "@storybook/addon-docs/blocks";
 import { withA11y } from "@storybook/addon-a11y";
+import { bvColors } from '@/config/storybook';
 
 <Meta title="Getting started|Styles" decorators={[withA11y]} />
 
@@ -18,22 +19,7 @@ You can use following to set element color:
     {{
       data() {
         return {
-          colors: [
-            'grey',
-            'red',
-            'green',
-            'green-light',
-            'blue',
-            'blue-indigo',
-            'yellow',
-            'yellow-amber',
-            'primary',
-            'secondary',
-            'success',
-            'info',
-            'warning',
-            'error',
-          ]
+          colors: bvColors
         }
       },
       methods: {
@@ -70,22 +56,7 @@ You can use following to set element textcolor:
     {{
       data() {
         return {
-          colors: [
-            'grey',
-            'red',
-            'green',
-            'green-light',
-            'blue',
-            'blue-indigo',
-            'yellow',
-            'yellow-amber',
-            'primary',
-            'secondary',
-            'success',
-            'info',
-            'warning',
-            'error',
-          ]
+          colors: bvColors
         }
       },
       methods: {
@@ -122,22 +93,7 @@ You can use following to set element border color:
     {{
       data() {
         return {
-          colors: [
-            'grey',
-            'red',
-            'green',
-            'green-light',
-            'blue',
-            'blue-indigo',
-            'yellow',
-            'yellow-amber',
-            'primary',
-            'secondary',
-            'success',
-            'info',
-            'warning',
-            'error',
-          ]
+          colors: bvColors
         }
       },
       methods: {
