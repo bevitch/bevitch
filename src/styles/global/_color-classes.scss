@@ -58,3 +58,12 @@
     }
   }
 }
+
+.bv--color-primary,
+.bv--color-primary-variant {
+  color: $color-theme-font-on-primary;
+}
+.bv--color-secondary,
+.bv--color-secondary-variant {
+  color: $color-theme-font-on-secondary;
+}
