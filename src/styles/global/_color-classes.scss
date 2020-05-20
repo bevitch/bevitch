@@ -26,9 +26,6 @@
     @each $mod-name, $mod in $colors-mods {
       &.bv--#{$mod-name} {
         background-color: $mod;
-        @if $mod-name == darken-1 or $mod-name == darken-2 or $mod-name == darken-3 {
-          color: $color-theme-light;
-        }
       }
     }
   }
@@ -60,4 +57,13 @@
       }
     }
   }
+}
+
+.bv--color-primary,
+.bv--color-primary-variant {
+  color: $color-theme-font-on-primary;
+}
+.bv--color-secondary,
+.bv--color-secondary-variant {
+  color: $color-theme-font-on-secondary;
 }
