@@ -24,7 +24,7 @@
   .bv--color-#{$name} {
     background-color: $color;
     @each $mod-name, $mod in $colors-mods {
-      &.bv--#{$mod-name} {
+      &-#{$mod-name} {
         background-color: $mod;
       }
     }
@@ -32,7 +32,7 @@
   .bv--text-color-#{$name} {
     color: $color;
     @each $mod-name, $mod in $colors-mods {
-      &.bv--text-#{$mod-name} {
+      &-#{$mod-name} {
         color: $mod;
       }
     }
@@ -40,7 +40,7 @@
   .bv--border-color-#{$name} {
     border-color: $color;
     @each $mod-name, $mod in $colors-mods {
-      &.bv--border-#{$mod-name} {
+      &-#{$mod-name} {
         border-color: $mod;
       }
     }
@@ -50,7 +50,7 @@
       background-color: $color;
     }
     @each $mod-name, $mod in $colors-mods {
-      &.bv--hover-#{$mod-name} {
+      &-#{$mod-name} {
         &:hover {
           background-color: $mod;
         }
