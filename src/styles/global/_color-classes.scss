@@ -57,6 +57,18 @@
       }
     }
   }
+  .bv--hover-text-color-#{$name} {
+    &:hover {
+      color: $color;
+    }
+    @each $mod-name, $mod in $colors-mods {
+      &-#{$mod-name} {
+        &:hover {
+          color: $mod;
+        }
+      }
+    }
+  }
 }
 
 .bv--color-primary,

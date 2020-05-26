@@ -87,8 +87,8 @@ You can use following to set element textcolor:
 You can use following to set element border color:
 
 - use `.bv--border-color-(color)` (for example `.bv--border-color-red`) to set element border color,
-- use `.bv--border-color-(color)-darken-(1, 2 or 3)` (for example `.bv--text-border-red-darken-2`) to set element border color to darken version of color,
-- use `.bv--border-color-(color)-lighten-(1, 2 or 3)` (for example `.bv--text-border-red-lighten-2`) to set element border color to lighten version of color,
+- use `.bv--border-color-(color)-darken-(1, 2 or 3)` (for example `.bv--border-red-darken-2`) to set element border color to darken version of color,
+- use `.bv--border-color-(color)-lighten-(1, 2 or 3)` (for example `.bv--border-red-lighten-2`) to set element border color to lighten version of color,
 
 <Preview>
   <Story name="Border color">
@@ -112,6 +112,69 @@ You can use following to set element border color:
     }}
   </Story>
 </Preview>
+
+## Hover background color
+
+You can use following to set element hover background color:
+
+- use `.bv--hover-color-(color)` (for example `.bv--hover-color-red`) to set element background color on hover,
+- use `.bv--hover-color-(color)-darken-(1, 2 or 3)` (for example `.bv--hover-color-red-darken-2`) to set element background color on hover to darken version of color,
+- use `.bv--hover-color-(color)-lighten-(1, 2 or 3)` (for example `.bv--hover-color-red-lighten-2`) to set element background color on hover to lighten version of color,
+
+<Preview>
+  <Story name="Hover background color">
+    {{
+      data() {
+        return {
+          colors: bvColors
+        }
+      },
+      mixins: [
+        colorMixin
+      ],
+      template: `
+        <div>
+          <div style="display: flex;flex-wrap: wrap;">
+            <div v-for="(color, index) in colors" :key="index" style="width: 330px;">
+              <div v-for="i in 7" :key="i" :class="getColor('bv--hover-color-', color, i)" style="margin: 3px;">{{ getColor('.bv--hover-color-', color, i) }}</div>
+            </div>
+          </div>
+        </div>`,
+    }}
+  </Story>
+</Preview>
+
+## Hover text color
+
+You can use following to set element hover text color:
+
+- use `.bv--hover-text-color-(color)` (for example `.bv--hover-text-color-red`) to set element text color on hover,
+- use `.bv--hover-text-color-(color)-darken-(1, 2 or 3)` (for example `.bv--hover-text-color-red-darken-2`) to set element text color on hover to darken version of color,
+- use `.bv--hover-text-color-(color)-lighten-(1, 2 or 3)` (for example `.bv--hover-text-color-red-lighten-2`) to set element text color on hover to lighten version of color,
+
+<Preview>
+  <Story name="Hover text color">
+    {{
+      data() {
+        return {
+          colors: bvColors
+        }
+      },
+      mixins: [
+        colorMixin
+      ],
+      template: `
+        <div>
+          <div style="display: flex;flex-wrap: wrap;">
+            <div v-for="(color, index) in colors" :key="index" style="width: 330px;">
+              <div v-for="i in 7" :key="i" :class="getColor('bv--hover-text-color-', color, i)" style="margin: 3px;">{{ getColor('.bv--hover-text-color-', color, i) }}</div>
+            </div>
+          </div>
+        </div>`,
+    }}
+  </Story>
+</Preview>
+
 
 ## Typography
 
