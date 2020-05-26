@@ -14,14 +14,12 @@
 <script lang="ts">
 import Vue, { PropOptions } from 'vue';
 import { Route } from 'vue-router';
+import { appearancePropsMixin } from '@/mixins/appearancePropsMixin';
 
 export default Vue.extend({
   name: 'BvButton',
+  mixins: [appearancePropsMixin],
   props: {
-    dark: {
-      type: Boolean,
-      default: false
-    } as PropOptions<boolean>,
     size: {
       type: String,
       default: 'md',
@@ -31,30 +29,6 @@ export default Vue.extend({
         'lg'
       ].includes(val)
     } as PropOptions<'sm ' | 'md' | 'lg'>,
-    color: {
-      type: String,
-      default: 'default'
-    } as PropOptions<string>,
-    elevated: {
-      type: Boolean,
-      default: false
-    } as PropOptions<boolean>,
-    bordered: {
-      type: Boolean,
-      default: false
-    } as PropOptions<boolean>,
-    disabled: {
-      type: Boolean,
-      default: false
-    } as PropOptions<boolean>,
-    rounded: {
-      type: Boolean,
-      default: false
-    } as PropOptions<boolean>,
-    outlined: {
-      type: Boolean,
-      default: false
-    } as PropOptions<boolean>,
     to: {
       type: [Object, String],
       default: null
