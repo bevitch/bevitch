@@ -13,11 +13,10 @@
 
 <script lang="ts">
 import { PropOptions } from 'vue';
-import { Route } from 'vue-router';
 import mixins from 'vue-typed-mixins';
-import AppearancePropsMixin from '@/mixins/appearancePropsMixin';
+import { BasicAppearanceProps, ShapeAppearanceProps, LinkBehaviourProps } from '@/mixins/commonPropsMixin';
 
-export default mixins(AppearancePropsMixin).extend({
+export default mixins(BasicAppearanceProps, ShapeAppearanceProps, LinkBehaviourProps).extend({
   name: 'BvButton',
   props: {
     size: {
@@ -28,15 +27,7 @@ export default mixins(AppearancePropsMixin).extend({
         'md',
         'lg'
       ].includes(val)
-    } as PropOptions<'sm ' | 'md' | 'lg'>,
-    to: {
-      type: [Object, String],
-      default: null
-    } as PropOptions<Route | null>,
-    href: {
-      type: String,
-      default: null
-    } as PropOptions<string | null>
+    } as PropOptions<'sm ' | 'md' | 'lg'>
   },
   computed: {
     component() {
