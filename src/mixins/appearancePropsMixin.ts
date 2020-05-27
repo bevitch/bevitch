@@ -1,5 +1,7 @@
-import { PropOptions } from 'vue';
-export const appearancePropsMixin = {
+import Vue, { PropOptions } from 'vue';
+
+export default Vue.extend({
+  name: 'AppearancePropsMixin',
   props: {
     dark: {
       type: Boolean,
@@ -34,4 +36,4 @@ export const appearancePropsMixin = {
       default: false
     } as PropOptions<boolean>
   }
-};
+});

@@ -12,13 +12,13 @@
 </template>
 
 <script lang="ts">
-import Vue, { PropOptions } from 'vue';
+import { PropOptions } from 'vue';
 import { Route } from 'vue-router';
-import { appearancePropsMixin } from '@/mixins/appearancePropsMixin';
+import mixins from 'vue-typed-mixins';
+import AppearancePropsMixin from '@/mixins/appearancePropsMixin';
 
-export default Vue.extend({
+export default mixins(AppearancePropsMixin).extend({
   name: 'BvButton',
-  mixins: [appearancePropsMixin],
   props: {
     size: {
       type: String,
