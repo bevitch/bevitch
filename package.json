@@ -1,6 +1,6 @@
 {
-  "name": "@bevitch/bevitch",
-  "version": "0.0.1",
+  "name": "@bevitch/core",
+  "version": "0.0.2",
   "main": "./dist/lib-no-vue/bevitch.common.js",
   "module": "./dist/lib-no-vue/bevitch.common.js",
   "scripts": {

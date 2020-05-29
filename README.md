@@ -13,7 +13,7 @@ Your app must have [vue](https://vuejs.org/v2/guide/installation.html) installed
 * Type following command to import `beVitch` library:
 
 ```bash
-npm i @bevitch/bevitch
+npm i @bevitch/core
 ```
 
 ## Quick start
