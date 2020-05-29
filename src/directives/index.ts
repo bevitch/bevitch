@@ -1,5 +1,1 @@
-import ClickOutside from './click-outside';
-
-export {
-  ClickOutside
-};
+export { ClickOutside } from './click-outside';
