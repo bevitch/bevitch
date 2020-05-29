@@ -68,10 +68,6 @@ describe('BvButton.vue', () => {
       const result = wrapper.vm.classes.includes('bv--hover-color-primary-lighten-1');
       expect(result).toEqual(true);
     });
-    it('Should include bv--hover-text-color-white class', () => {
-      const result = wrapper.vm.classes.includes('bv--hover-text-color-white');
-      expect(result).toEqual(true);
-    });
     describe('classes property for flat button', () => {
       beforeEach(()=>{ wrapper.setProps({ flat: true });} );
       it('Should include bv--text-color-primary class', () => {

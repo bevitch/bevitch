@@ -59,8 +59,7 @@ export default mixins(BasicAppearanceProps, ShapeAppearanceProps, LinkBehaviourP
         colorClass = setColorClass(
           {
             color: this.color,
-            hoverColor: `${this.color}-lighten-1`,
-            hoverTextColor: this.hoverText
+            hoverColor: `${this.color}-lighten-1`
           } as ColorsSettings);
       } else if (this.flat && !this.outlined) { // flat button
         colorClass = setColorClass(
