@@ -2,7 +2,8 @@
 
 exports[`BvButton.vue Should match snapshot 1`] = `
 <button
-  class="bv-button bv-button--md bv-button--color-primary bv-button--light bv-button--elevated bv-button--outlined"
+  class="bv-button bv--color-primary bv--hover-color-primary-lighten-1 bv-button--md bv--theme-dark bv-button--elevated"
+  target=""
   type="button"
 />
 `;

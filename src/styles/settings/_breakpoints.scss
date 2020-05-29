@@ -1,7 +1,9 @@
-$xs: 360px !default;
-$sm: 768px !default;
-$md: 992px !default;
+$xs: 320px !default;
+$sm: 500px !default;
+$md: 768px !default;
 $lg: 1200px !default;
 
 $min-content-width: $xs;
 $max-content-width: $lg;
+
+$layout-spacer: 10px;

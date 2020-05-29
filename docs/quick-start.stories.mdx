@@ -7,14 +7,14 @@ import { linkTo } from '@storybook/addon-links';
 
 ## Adding library to application
 
-### In your main file import `ne-vue-components` library and inject it to your vue instance:
+### In your main file import `bevitch` library and inject it to your vue instance:
 
 ```ts
 import Vue from 'vue';
 import App from './App.vue';
-import NeVueComponents from 'ne-vue-components';
+import beVitch from 'bevitch';
 
-Vue.use(NeVueComponents);
+Vue.use(beVitch);
 
 new Vue({
   render: h => h(App)
@@ -27,15 +27,14 @@ new Vue({
 ```ts
 import Vue from 'vue';
 import App from './App.vue';
-import NeVueComponents from 'ne-vue-components';
-import 'ne-vue-components/dist/lib/ne-vue-components.css';
+import beVitch from 'bevitch';
+import 'bevitch/dist/lib/bevitch.css';
 
-Vue.use(NeVueComponents);
+Vue.use(beVitch);
 
 new Vue({
   render: h => h(App)
 }).$mount('#app');
-
 ```
 
 ### Add your custom configuration:
@@ -43,24 +42,23 @@ new Vue({
 ```ts
 import Vue from 'vue';
 import App from './App.vue';
-import NeVueComponents from 'ne-vue-components';
-import 'ne-vue-components/dist/lib/ne-vue-components.css';
+import beVitch from 'bevitch';
+import 'bevitch/dist/lib/bevitch.css';
 
-const neVueOptions = {
+const beVitchOptions = {
   dictionary: {
     search: {
-      search: 'Szukaj', 
-      noMatchingItems: 'Brak pasujących wyników'
+      search: 'Search...', 
+      noMatchingItems: 'No matching items'
     }
   }
 };
 
-Vue.use(NeVueComponents, neVueOptions);
+Vue.use(beVitch, beVitchOptions);
 
 new Vue({
   render: h => h(App)
 }).$mount('#app');
-
 ```
 
 ## TypeScript support
@@ -70,20 +68,20 @@ If you are using TypeScript you can import `CustomOptions` interface to validate
 ```ts
 import Vue from 'vue';
 import App from './App.vue';
-import NeVueComponents from 'ne-vue-components';
-import 'ne-vue-components/dist/lib/ne-vue-components.css';
-import { CustomOptions } from 'ne-vue-components/src/types';
+import beVitch from 'bevitch';
+import 'bevitch/dist/lib/bevitch.css';
+import { CustomOptions } from 'bevitch/src/types';
 
-const neVueOptions: CustomOptions = {
+const beVitchOptions: CustomOptions = {
   dictionary: {
     search: {
-      search: 'Szukaj', 
-      noMatchingItems: 'Brak pasujących wyników'
+      search: 'Search...', 
+      noMatchingItems: 'No matching items'
     }
   }
 };
 
-Vue.use(NeVueComponents, neVueOptions);
+Vue.use(beVitch, beVitchOptions);
 
 new Vue({
   render: h => h(App)
@@ -91,11 +89,11 @@ new Vue({
 
 ```
 
-## Using NeVueComponents
+## Using beVitch
 
-Instruction of using NeVueComponents is available in *Components* section.
+Instruction of using beVitch is available in *Components* section.
 
-## Using directives from NeVueComponents
+## Using directives from beVitch
 
 Instruction of using directives is available in *Direvtives* section.
 

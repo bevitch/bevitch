@@ -2,7 +2,6 @@
 
 .bv-button {
   font-family: $font-main;
-  border: 0;
   font-weight: normal;
   display: inline-flex;
   justify-content: center;
@@ -32,53 +31,17 @@
     border-radius: 1.2em;
   }
 
-  &--light {
-    color: $color-theme-light-font;
-    background-color: $color-theme-light;
-
-    &:hover {
-      background-color: darken($color-theme-light, 10%);
-    }
-  }
-
-  &--dark {
-    color: $color-theme-dark-font;
-    background-color: $color-theme-dark;
-
-    &:hover {
-      background-color: lighten($color-theme-dark, 10%);
-    }
-  }
-
-  @each $name, $color in $colors {
-    &--color-#{$name} {
-      color: $color-theme-light;
-      background-color: $color;
-      &:hover {
-        background-color: lighten($color, 10%);
-      }
-    }
-    &--color-#{$name}#{&}--outlined {
-      color: $color;
-      background-color: $color-white;
-      border: set-border($color);
-      &:hover {
-        color: $color-theme-light;
-        background-color: $color;
-      }
-    }
-  }
-
   &--elevated {
     box-shadow: 0 6px 10px rgba(0, 0, 0, .3);
   }
 
-  &--bordered {
-    border: set-border($color-grey--dark);
+  &--outlined {
+    border-width: 1px;
+    border-style: solid;
   }
 
   &--disabled {
-    color: darken($color-disabled, 58%);
+    color: darken($color-disabled, 40%);
     background-color: $color-disabled;
     pointer-events: none;
   }

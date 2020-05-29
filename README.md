@@ -1,59 +1,50 @@
-# Bevitch #
+# beVitch #
 
 Library with reusable UI components and directives for Vue.js applications
 
-### Project structure ###
+## Intallation
 
-* `/src` - Main content (components and directives),
-* `/kitchen` - Space for testing library. Type `cd kitchen` and follow instructions from README.md in this folder to use it,
-* `/dist` - Directory with built library. To build library type `npm run build`
+### Prerequisites
 
-## Project setup
+Your app must have [vue](https://vuejs.org/v2/guide/installation.html) installed.
 
-### Installs dependencies
-```
-npm install
-```
+### Import library
 
-### Compiles and minifies for production
-```
-npm run build
+* Type following command to import `beVitch` library:
+
+```bash
+npm i @bevitch/bevitch
 ```
 
-### Builds production version of library with vue instance included
-```
-npm run build:inline-vue
+## Quick start
+
+### Adding library to application
+
+In your main file import `bevitch` library and inject it to your vue instance:
+
+```ts
+import Vue from 'vue';
+import App from './App.vue';
+import beVitch from 'bevitch';
+
+Vue.use(beVitch);
+
+new Vue({
+  render: h => h(App)
+}).$mount('#app');
 ```
 
-### Builds production version of library without vue instance
-```
-npm run build:no-vue
-```
+### Add styles for library components:
 
-### Run your unit tests
-```
-npm run test:unit
-```
+```ts
+import Vue from 'vue';
+import App from './App.vue';
+import beVitch from 'bevitch';
+import 'bevitch/dist/lib/bevitch.css';
 
-### Lints and fixes files
-```
-npm run lint
-```
+Vue.use(beVitch);
 
-### Builds storybook application with library documentation
+new Vue({
+  render: h => h(App)
+}).$mount('#app');
 ```
-npm run storybook:build
-```
-
-### Serves storybook application in development mode
-```
-npm run storybook:serve
-```
-### Adding new icons to NeIcon component
-
-Add new svg icon (size: 150x150 ) to `../styles/icons-source` and rebuild icon fonts with
-```
-npm run build:icons
-```
-Svg file name will be icon name.
-Please add new icons to icon list in stories in storybook.
