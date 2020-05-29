@@ -79,3 +79,16 @@
 .bv--color-secondary-variant {
   color: $color-theme-font-on-secondary;
 }
+
+.bv--hover-color-primary,
+.bv--hover-color-primary-variant {
+  &:hover {
+    color: $color-theme-font-on-primary;
+  }
+}
+.bv--hover-color-secondary,
+.bv--hover-color-secondary-variant {
+  &:hover {
+    color: $color-theme-font-on-secondary;
+  }
+}

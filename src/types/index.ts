@@ -22,8 +22,9 @@ export interface CustomOptions {
 export interface ColorsSettings {
   dark?: boolean;
   light?: boolean;
-  color?: string | null;
-  textColor?: string | null;
-  borderColor?: string | null;
-  hoverBgColor?: string | null;
+  color?: string;
+  textColor?: string;
+  borderColor?: string;
+  hoverColor?: string;
+  hoverTextColor?: string;
 }

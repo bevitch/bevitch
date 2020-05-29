@@ -21,6 +21,17 @@ $font-weights: (
 ) !default;
 
 $colors: (
+  'primary': $color-primary,
+  'primary-variant': $color-primary-variant,
+  'secondary': $color-secondary,
+  'secondary-variant': $color-secondary-variant,
+  'success': $color-success,
+  'info': $color-info,
+  'warning': $color-warning,
+  'error': $color-error,
+  'disabled': $color-disabled,
+  'white': $color-white,
+  'black': $color-black,
   'grey': $color-grey,
   'grey-variant': $color-grey-variant,
   'red': $color-red,
@@ -37,15 +48,6 @@ $colors: (
   'purple-variant': $color-purple-variant,
   'beige': $color-beige,
   'beige-variant': $color-beige-variant,
-  'primary': $color-primary,
-  'primary-variant': $color-primary-variant,
-  'secondary': $color-secondary,
-  'secondary-variant': $color-secondary-variant,
-  'success': $color-success,
-  'info': $color-info,
-  'warning': $color-warning,
-  'error': $color-error,
-  'disabled': $color-disabled
 ) !default;
 
 $headings: (

@@ -33,10 +33,6 @@ const ShapeAppearanceProps = Vue.extend({
     rounded: {
       type: Boolean,
       default: false
-    } as PropOptions<boolean>,
-    outlined: {
-      type: Boolean,
-      default: false
     } as PropOptions<boolean>
   }
 });
