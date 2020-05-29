@@ -5,6 +5,7 @@
     :class="classes"
     class="bv-button"
     type="button"
+    :target="target"
     @click="click"
   >
     <slot />
@@ -44,8 +45,11 @@ export default mixins(BasicAppearanceProps, ShapeAppearanceProps, LinkBehaviourP
     } as PropOptions<'sm ' | 'md' | 'lg'>
   },
   computed: {
-    component() {
+    component():string {
       return this.to ? 'RouterLink' : this.href ? 'a' : 'button';
+    },
+    target():string {
+      return (this.to || this.href) ? ((this.newWindow) ?'_blank' : '_self') : '';
     },
     classes() {
       const sizeClass = `bv-button--${this.size}`;
