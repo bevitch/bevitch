@@ -1,6 +1,20 @@
 import { Meta, Props, Story, Preview } from "@storybook/addon-docs/blocks";
 import { withA11y } from "@storybook/addon-a11y";
 import { bvColors } from '@/config/storybook';
+let colorMixin = {
+  methods: {
+    getBaseColor(prefix, color) {
+      return `${prefix}${color}`;
+    },
+    getShade(shade) {
+      const suffix = shade < 4 ? `lighten${shade - 4}` : shade === 4 ? '' : `darken-${shade - 4}`;
+      return suffix.length > 0 ? `-${suffix}` : '';
+    },
+    getColor(prefix, color, shade){
+      return `${this.getBaseColor(prefix, color)}${this.getShade(shade)}`;
+    }
+  }
+};
 
 <Meta title="Getting started|Styles" decorators={[withA11y]} />
 
@@ -10,9 +24,9 @@ import { bvColors } from '@/config/storybook';
 
 You can use following to set element color:
 
-- use `.bv--color-(color)` (for example `.bv--color-red`) to set element background,
-- use `.bv--color-(color)` and `.bv--darken-(1, 2 or 3)` (for example `.bv--darken-2`) to darken selected color,
-- use `.bv--color-(color)` and `.bv--lighten-(1, 2 or 3)` (for example `.bv--lighten-2`) to lighten selected color,
+- use `.bv--color-(color)` (for example `.bv--color-red`) to set element background color color,
+- use `.bv--color-(color)-darken-(1, 2 or 3)` (for example `.bv--color-red-darken-2`) to set element background color to darken version of color,
+- use `.bv--color-(color)-lighten-(1, 2 or 3)` (for example `.bv--color-red-lighten-2`) to set element background color to lighten version of color,
 
 <Preview>
   <Story name="Background color">
@@ -22,20 +36,14 @@ You can use following to set element color:
           colors: bvColors
         }
       },
-      methods: {
-        getColor(prefix, color) {
-          return `${prefix}${color}`;
-        },
-        getShade(prefix, shade) {
-          const suffix = shade < 4 ? `lighten${shade - 4}` : shade === 4 ? '' : `darken-${shade - 4}`;
-          return suffix.length > 0 ? `${prefix}${suffix}` : '';
-        }
-      },
+      mixins: [
+        colorMixin
+      ],
       template: `
         <div>
           <div style="display: flex;flex-wrap: wrap;">
             <div v-for="(color, index) in colors" :key="index" style="width: 300px;">
-              <div v-for="i in 7" :key="i" :class="[getColor('bv--color-', color), getShade('bv--', i)]">{{ getColor('.bv--color-', color) }} {{ getShade('.bv--', i) }}</div>
+              <div v-for="i in 7" :key="i" :class="getColor('bv--color-', color, i)">{{ getColor('.bv--color-', color, i) }}</div>
             </div>
           </div>
         </div>`,
@@ -48,8 +56,8 @@ You can use following to set element color:
 You can use following to set element textcolor:
 
 - use `.bv--text-color-(color)` (for example `.bv--text-color-red`) to set element font color,
-- use `.bv--text--color-(color)` and `.bv--text-darken-(1, 2 or 3)` (for example `.bv--text-darken-2`) to darken selected font color,
-- use `.bv--text--color-(color)` and `.bv--text-lighten-(1, 2 or 3)` (for example `.bv--text-lighten-2`) to lighten selected font color
+- use `.bv--text-color-(color)-darken-(1, 2 or 3)` (for example `.bv--text-color-red-darken-2`) to set element font color to darken version of color,
+- use `.bv--text-color-(color)-lighten-(1, 2 or 3)` (for example `.bv--text-color-red-lighten-2`) to set element font color to lighten version of color,
 
 <Preview>
   <Story name="Text color">
@@ -59,20 +67,14 @@ You can use following to set element textcolor:
           colors: bvColors
         }
       },
-      methods: {
-        getColor(prefix, color) {
-          return `${prefix}${color}`;
-        },
-        getShade(prefix, shade) {
-          const suffix = shade < 4 ? `lighten${shade - 4}` : shade === 4 ? '' : `darken-${shade - 4}`;
-          return suffix.length > 0 ? `${prefix}${suffix}` : '';
-        }
-      },
+      mixins: [
+        colorMixin
+      ],
       template: `
         <div>
           <div style="display: flex;flex-wrap: wrap;">
             <div v-for="(color, index) in colors" :key="index" style="width: 400px;">
-              <div v-for="i in 7" :key="i" :class="[getColor('bv--text-color-', color), getShade('bv--text-', i)]">{{ getColor('.bv--text-color-', color) }} {{ getShade('.bv--text-', i) }}</div>
+              <div v-for="i in 7" :key="i" :class="getColor('bv--text-color-', color, i)">{{ getColor('.bv--text-color-', color, i) }}</div>
             </div>
           </div>
         </div>`,
@@ -85,8 +87,8 @@ You can use following to set element textcolor:
 You can use following to set element border color:
 
 - use `.bv--border-color-(color)` (for example `.bv--border-color-red`) to set element border color,
-- use `.bv--border-color-(color)` and `.bv--border-darken-(1, 2 or 3)` (for example `.bv--border-darken-2`) to darken selected border color,
-- use `.bv--border-color-(color)` and `.bv--border-lighten-(1, 2 or 3)` (for example `.bv--border-lighten-2`) to lighten selected border color
+- use `.bv--border-color-(color)-darken-(1, 2 or 3)` (for example `.bv--border-red-darken-2`) to set element border color to darken version of color,
+- use `.bv--border-color-(color)-lighten-(1, 2 or 3)` (for example `.bv--border-red-lighten-2`) to set element border color to lighten version of color,
 
 <Preview>
   <Story name="Border color">
@@ -96,26 +98,83 @@ You can use following to set element border color:
           colors: bvColors
         }
       },
-      methods: {
-        getColor(prefix, color) {
-          return `${prefix}${color}`;
-        },
-        getShade(prefix, shade) {
-          const suffix = shade < 4 ? `lighten${shade - 4}` : shade === 4 ? '' : `darken-${shade - 4}`;
-          return suffix.length > 0 ? `${prefix}${suffix}` : '';
-        }
-      },
+      mixins: [
+        colorMixin
+      ],
       template: `
         <div>
           <div style="display: flex;flex-wrap: wrap;">
-            <div v-for="(color, index) in colors" :key="index" style="width: 300px;">
-              <div v-for="i in 7" :key="i" :class="[getColor('bv--border-color-', color), getShade('bv--border-', i)]" style="border-width: 1px; border-style: solid; padding: 5px; margin: 5px;">{{ getColor('.bv---border-color-', color) }} <br> {{ getShade('.bv--border', i) }}</div>
+            <div v-for="(color, index) in colors" :key="index" style="width: 330px;">
+              <div v-for="i in 7" :key="i" :class="getColor('bv--border-color-', color, i)" style="border-width: 1px; border-style: solid; margin: 3px;">{{ getColor('.bv--border-color-', color, i) }}</div>
             </div>
           </div>
         </div>`,
     }}
   </Story>
 </Preview>
+
+## Hover background color
+
+You can use following to set element hover background color:
+
+- use `.bv--hover-color-(color)` (for example `.bv--hover-color-red`) to set element background color on hover,
+- use `.bv--hover-color-(color)-darken-(1, 2 or 3)` (for example `.bv--hover-color-red-darken-2`) to set element background color on hover to darken version of color,
+- use `.bv--hover-color-(color)-lighten-(1, 2 or 3)` (for example `.bv--hover-color-red-lighten-2`) to set element background color on hover to lighten version of color,
+
+<Preview>
+  <Story name="Hover background color">
+    {{
+      data() {
+        return {
+          colors: bvColors
+        }
+      },
+      mixins: [
+        colorMixin
+      ],
+      template: `
+        <div>
+          <div style="display: flex;flex-wrap: wrap;">
+            <div v-for="(color, index) in colors" :key="index" style="width: 330px;">
+              <div v-for="i in 7" :key="i" :class="getColor('bv--hover-color-', color, i)" style="margin: 3px;">{{ getColor('.bv--hover-color-', color, i) }}</div>
+            </div>
+          </div>
+        </div>`,
+    }}
+  </Story>
+</Preview>
+
+## Hover text color
+
+You can use following to set element hover text color:
+
+- use `.bv--hover-text-color-(color)` (for example `.bv--hover-text-color-red`) to set element text color on hover,
+- use `.bv--hover-text-color-(color)-darken-(1, 2 or 3)` (for example `.bv--hover-text-color-red-darken-2`) to set element text color on hover to darken version of color,
+- use `.bv--hover-text-color-(color)-lighten-(1, 2 or 3)` (for example `.bv--hover-text-color-red-lighten-2`) to set element text color on hover to lighten version of color,
+
+<Preview>
+  <Story name="Hover text color">
+    {{
+      data() {
+        return {
+          colors: bvColors
+        }
+      },
+      mixins: [
+        colorMixin
+      ],
+      template: `
+        <div>
+          <div style="display: flex;flex-wrap: wrap;">
+            <div v-for="(color, index) in colors" :key="index" style="width: 330px;">
+              <div v-for="i in 7" :key="i" :class="getColor('bv--hover-text-color-', color, i)" style="margin: 3px;">{{ getColor('.bv--hover-text-color-', color, i) }}</div>
+            </div>
+          </div>
+        </div>`,
+    }}
+  </Story>
+</Preview>
+
 
 ## Typography
 

@@ -5,6 +5,7 @@
     :class="classes"
     class="bv-button"
     type="button"
+    :target="target"
     @click="click"
   >
     <slot />
@@ -12,16 +13,27 @@
 </template>
 
 <script lang="ts">
-import Vue, { PropOptions } from 'vue';
-import { Route } from 'vue-router';
+import { PropOptions } from 'vue';
+import mixins from 'vue-typed-mixins';
+import { setColorClass } from '@/helpers/set-color-class';
+import { ColorsSettings } from '@/types';
+import { BasicAppearanceProps, ShapeAppearanceProps, LinkBehaviourProps } from '@/mixins/commonPropsMixin';
 
-export default Vue.extend({
+export default mixins(BasicAppearanceProps, ShapeAppearanceProps, LinkBehaviourProps).extend({
   name: 'BvButton',
   props: {
-    dark: {
+    outlined: {
       type: Boolean,
       default: false
     } as PropOptions<boolean>,
+    flat: {
+      type: Boolean,
+      default: false
+    } as PropOptions<boolean>,
+    hoverText: {
+      type: String,
+      default: 'white'
+    } as PropOptions<string>,
     size: {
       type: String,
       default: 'md',
@@ -30,55 +42,50 @@ export default Vue.extend({
         'md',
         'lg'
       ].includes(val)
-    } as PropOptions<'sm ' | 'md' | 'lg'>,
-    color: {
-      type: String,
-      default: 'default'
-    } as PropOptions<string>,
-    elevated: {
-      type: Boolean,
-      default: false
-    } as PropOptions<boolean>,
-    bordered: {
-      type: Boolean,
-      default: false
-    } as PropOptions<boolean>,
-    disabled: {
-      type: Boolean,
-      default: false
-    } as PropOptions<boolean>,
-    rounded: {
-      type: Boolean,
-      default: false
-    } as PropOptions<boolean>,
-    outlined: {
-      type: Boolean,
-      default: false
-    } as PropOptions<boolean>,
-    to: {
-      type: [Object, String],
-      default: null
-    } as PropOptions<Route | null>,
-    href: {
-      type: String,
-      default: null
-    } as PropOptions<string | null>
+    } as PropOptions<'sm ' | 'md' | 'lg'>
   },
   computed: {
-    component() {
+    component():string {
       return this.to ? 'RouterLink' : this.href ? 'a' : 'button';
     },
-    classes() {
+    target():string {
+      return (this.to || this.href) ? ((this.newWindow) ?'_blank' : '_self') : '';
+    },
+    classes():Array<{[key in string]: boolean} | string> {
       const sizeClass = `bv-button--${this.size}`;
-      const colorClass = `bv-button--color-${this.color}`;
-      const themeClass = `bv-button--${this.dark ? 'dark' : 'light'}`;
+      let colorClass: string[] = [];
+
+      if (!this.flat && !this.outlined) { // basic button (no outline, no flat)
+        colorClass = setColorClass(
+          {
+            color: this.color,
+            hoverColor: `${this.color}-lighten-1`
+          } as ColorsSettings);
+      } else if (this.flat && !this.outlined) { // flat button
+        colorClass = setColorClass(
+          {
+            textColor: this.color,
+            hoverColor: this.color,
+            hoverTextColor: this.hoverText
+          } as ColorsSettings);
+      } else {
+        colorClass = setColorClass( // outlined button
+          {
+            textColor: this.color,
+            hoverColor: this.color,
+            hoverTextColor: this.hoverText,
+            borderColor: this.color
+          } as ColorsSettings);
+      }
       return [
+        ...colorClass,
         sizeClass,
-        colorClass,
-        themeClass,
+        ...setColorClass({
+          dark: this.dark,
+          light: this.light
+        }),
         {
           'bv-button--elevated': this.elevated,
-          'bv-button--bordered': this.bordered,
           'bv-button--disabled': this.disabled,
           'bv-button--rounded': this.rounded,
           'bv-button--outlined': this.outlined

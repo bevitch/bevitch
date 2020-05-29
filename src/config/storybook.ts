@@ -1,4 +1,14 @@
 export const bvColors = [
+  'primary',
+  'secondary',
+  'primary-variant',
+  'secondary-variant',
+  'success',
+  'info',
+  'warning',
+  'error',
+  'white',
+  'black',
   'grey',
   'grey-variant',
   'red',
@@ -14,13 +24,5 @@ export const bvColors = [
   'purple',
   'purple-variant',
   'beige',
-  'beige-variant',
-  'primary',
-  'secondary',
-  'primary-variant',
-  'secondary-variant',
-  'success',
-  'info',
-  'warning',
-  'error'
+  'beige-variant'
 ];
