@@ -12,7 +12,7 @@ import { linkTo } from '@storybook/addon-links';
 ```ts
 import Vue from 'vue';
 import App from './App.vue';
-import beVitch from 'bevitch';
+import beVitch from '@bevitch/core';
 
 Vue.use(beVitch);
 
@@ -27,8 +27,8 @@ new Vue({
 ```ts
 import Vue from 'vue';
 import App from './App.vue';
-import beVitch from 'bevitch';
-import 'bevitch/dist/lib/bevitch.css';
+import beVitch from '@bevitch/core';
+import '@bevitch/core/dist/lib/bevitch.css';
 
 Vue.use(beVitch);
 
@@ -42,8 +42,8 @@ new Vue({
 ```ts
 import Vue from 'vue';
 import App from './App.vue';
-import beVitch from 'bevitch';
-import 'bevitch/dist/lib/bevitch.css';
+import beVitch from '@bevitch/core';
+import '@bevitch/core/dist/lib/bevitch.css';
 
 const beVitchOptions = {
   dictionary: {
@@ -68,9 +68,9 @@ If you are using TypeScript you can import `CustomOptions` interface to validate
 ```ts
 import Vue from 'vue';
 import App from './App.vue';
-import beVitch from 'bevitch';
-import 'bevitch/dist/lib/bevitch.css';
-import { CustomOptions } from 'bevitch/src/types';
+import beVitch from '@bevitch/core';
+import '@bevitch/core/dist/lib/bevitch.css';
+import { CustomOptions } from '@bevitch/core/src/types';
 
 const beVitchOptions: CustomOptions = {
   dictionary: {

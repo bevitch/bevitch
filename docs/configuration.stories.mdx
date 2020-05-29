@@ -13,9 +13,9 @@ So you can define your own dictionary for your app:
 ```ts
 import Vue from 'vue';
 import App from './App.vue';
-import Bevitch from 'bevitch';
+import beVitch from '@bevitch/core';
 
-const bevitchOptions = {
+const beVitchOptions = {
   dictionary: {
     search: {
       search: 'Szukaj',
@@ -24,7 +24,7 @@ const bevitchOptions = {
   }
 };
 
-Vue.use(Bevitch, bevitchOptions);
+Vue.use(beVitch, beVitchOptions);
 
 new Vue({
   render: h => h(App)
@@ -49,10 +49,10 @@ If you are using TypeScript you can import `CustomOptions` interface to validate
 ```ts
 import Vue from 'vue';
 import App from './App.vue';
-import Bevitch from 'bevitch';
+import beVitch from 'bevitch';
 import { CustomOptions } from 'bevitch/src/types';
 
-const bevitchOptions: CustomOptions = {
+const beVitchOptions: CustomOptions = {
   dictionary: {
     search: {
       search: 'Szukaj',
@@ -61,7 +61,7 @@ const bevitchOptions: CustomOptions = {
   }
 };
 
-Vue.use(Bevitch, bevitchOptions);
+Vue.use(beVitch, beVitchOptions);
 
 new Vue({
   render: h => h(App)
@@ -94,7 +94,7 @@ export default Vue.extend({
 <style lang="scss">
 $color-primary: #f99;
 $color-secondary: #f55;
-@import '~bevitch/src/styles/lib.scss';
+@import '~beVitch/src/styles/lib.scss';
 </style>
 ```
 
