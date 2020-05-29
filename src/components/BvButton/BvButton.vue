@@ -51,7 +51,7 @@ export default mixins(BasicAppearanceProps, ShapeAppearanceProps, LinkBehaviourP
     target():string {
       return (this.to || this.href) ? ((this.newWindow) ?'_blank' : '_self') : '';
     },
-    classes() {
+    classes():Array<{[key in string]: boolean} | string> {
       const sizeClass = `bv-button--${this.size}`;
       let colorClass: string[] = [];
 
