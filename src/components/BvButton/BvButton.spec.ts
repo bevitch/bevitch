@@ -7,13 +7,15 @@ describe('BvButton.vue', () => {
   let wrapper: any;
 
   const propsData = {
-    dark: false,
+    light: false,
+    dark: true,
     size: 'md',
     color: 'primary',
+    hoverText: 'white',
     elevated: true,
-    bordered: false,
     disabled: false,
-    outlined: true
+    outlined: false,
+    flat: false
   };
 
   beforeEach(() => {
@@ -48,10 +50,61 @@ describe('BvButton.vue', () => {
   });
 
   describe('classes property', () => {
-    it('Should include bv-button--dark class if dark property equals true', () => {
-      wrapper.setProps({ dark: true });
-      const result = wrapper.vm.classes.includes('bv-button--dark');
+    it('Should include bv--theme-light class if light property equals true', () => {
+      wrapper.setProps({ light: true });
+      const result = wrapper.vm.classes.includes('bv--theme-light');
       expect(result).toEqual(true);
+    });
+    it('Should include bv--theme-dark class if dark property equals true', () => {
+      wrapper.setProps({ dark: true });
+      const result = wrapper.vm.classes.includes('bv--theme-dark');
+      expect(result).toEqual(true);
+    });
+    it('Should include bv--color-primary class', () => {
+      const result = wrapper.vm.classes.includes('bv--color-primary');
+      expect(result).toEqual(true);
+    });
+    it('Should include bv--hover-color-primary-lighten-1 class', () => {
+      const result = wrapper.vm.classes.includes('bv--hover-color-primary-lighten-1');
+      expect(result).toEqual(true);
+    });
+    it('Should include bv--hover-text-color-white class', () => {
+      const result = wrapper.vm.classes.includes('bv--hover-text-color-white');
+      expect(result).toEqual(true);
+    });
+    describe('classes property for flat button', () => {
+      beforeEach(()=>{ wrapper.setProps({ flat: true });} );
+      it('Should include bv--text-color-primary class', () => {
+        const result = wrapper.vm.classes.includes('bv--text-color-primary');
+        expect(result).toEqual(true);
+      });
+      it('Should include bv--hover-color-primary class', () => {
+        const result = wrapper.vm.classes.includes('bv--hover-color-primary');
+        expect(result).toEqual(true);
+      });
+      it('Should include bv--hover-text-color-white class', () => {
+        const result = wrapper.vm.classes.includes('bv--hover-text-color-white');
+        expect(result).toEqual(true);
+      });
+    });
+    describe('classes property for outlined button', () => {
+      beforeEach(()=>{ wrapper.setProps({ outlined: true });} );
+      it('Should include bv--text-color-primary class', () => {
+        const result = wrapper.vm.classes.includes('bv--text-color-primary');
+        expect(result).toEqual(true);
+      });
+      it('Should include bv--hover-color-primary class', () => {
+        const result = wrapper.vm.classes.includes('bv--hover-color-primary');
+        expect(result).toEqual(true);
+      });
+      it('Should include bv--hover-text-color-white class', () => {
+        const result = wrapper.vm.classes.includes('bv--hover-text-color-white');
+        expect(result).toEqual(true);
+      });
+      it('Should include bv--border-color-primary class', () => {
+        const result = wrapper.vm.classes.includes('bv--border-color-primary');
+        expect(result).toEqual(true);
+      });
     });
   });
 
