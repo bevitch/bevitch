@@ -1,6 +1,6 @@
 {
   "name": "@bevitch/core",
-  "version": "0.0.2",
+  "version": "0.0.3--alpha-1",
   "main": "./dist/lib-no-vue/bevitch.common.js",
   "module": "./dist/lib-no-vue/bevitch.common.js",
   "scripts": {
@@ -9,8 +9,8 @@
     "build:no-vue": "vue-cli-service build --target lib --name bevitch src/lib-target.ts --dest dist/lib-no-vue",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
-    "storybook:build": "vue-cli-service storybook:build -c config/storybook",
-    "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c config/storybook"
+    "storybook:build": "vue-cli-service storybook:build -c config/storybook -s ./src/assets",
+    "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c config/storybook -s ./src/assets"
   },
   "dependencies": {
     "core-js": "^3.6.4",
