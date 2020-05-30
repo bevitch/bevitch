@@ -12,7 +12,7 @@ import { linkTo } from '@storybook/addon-links';
 ```ts
 import Vue from 'vue';
 import App from './App.vue';
-import beVitch from 'bevitch';
+import beVitch from '@bevitch/core';
 
 Vue.use(beVitch);
 
@@ -27,8 +27,8 @@ new Vue({
 ```ts
 import Vue from 'vue';
 import App from './App.vue';
-import beVitch from 'bevitch';
-import 'bevitch/dist/lib/bevitch.css';
+import beVitch from '@bevitch/core';
+import '@bevitch/core/dist/lib/bevitch.css';
 
 Vue.use(beVitch);
 
@@ -42,16 +42,11 @@ new Vue({
 ```ts
 import Vue from 'vue';
 import App from './App.vue';
-import beVitch from 'bevitch';
-import 'bevitch/dist/lib/bevitch.css';
+import beVitch from '@bevitch/core';
+import '@bevitch/core/dist/lib/bevitch.css';
 
 const beVitchOptions = {
-  dictionary: {
-    search: {
-      search: 'Search...', 
-      noMatchingItems: 'No matching items'
-    }
-  }
+  locale: 'pl'
 };
 
 Vue.use(beVitch, beVitchOptions);
@@ -68,17 +63,12 @@ If you are using TypeScript you can import `CustomOptions` interface to validate
 ```ts
 import Vue from 'vue';
 import App from './App.vue';
-import beVitch from 'bevitch';
-import 'bevitch/dist/lib/bevitch.css';
-import { CustomOptions } from 'bevitch/src/types';
+import beVitch from '@bevitch/core';
+import '@bevitch/core/dist/lib/bevitch.css';
+import { CustomOptions } from '@bevitch/core/src/types';
 
 const beVitchOptions: CustomOptions = {
-  dictionary: {
-    search: {
-      search: 'Search...', 
-      noMatchingItems: 'No matching items'
-    }
-  }
+  locale: 'pl'
 };
 
 Vue.use(beVitch, beVitchOptions);
@@ -89,9 +79,9 @@ new Vue({
 
 ```
 
-## Using beVitch
+## Using beVitch components
 
-Instruction of using beVitch is available in *Components* section.
+Instruction of using beVitch components is available in *Components* section.
 
 ## Using directives from beVitch
 

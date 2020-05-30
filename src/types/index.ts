@@ -1,22 +1,29 @@
 export interface Dictionary {
-    search: {
-        search: string;
-        noMatchingItems: string;
-    }
 }
 
 export interface CustomIcons {
-    [key: string]: string;
+  [key: string]: string;
+}
+
+export enum Locale {
+  PL = 'pl',
+  EN = 'en'
 }
 
 export interface Options {
-    dictionary: Dictionary,
-    customIcons: CustomIcons
+  locale: string;
+  locales: {
+    [key in string]: Dictionary;
+  };
+  customIcons: CustomIcons;
 }
 
 export interface CustomOptions {
-    dictionary?: Dictionary,
-    customIcons?: CustomIcons
+  locale?: string;
+  locales?: {
+    [key in string]: Dictionary;
+  };
+  customIcons?: CustomIcons;
 }
 
 export interface ColorsSettings {
