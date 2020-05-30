@@ -13,7 +13,7 @@
       }
     }
   }
-  $breakpoints: sm, md, lg, xl;
+  $breakpoints: sm, md, lg;
   @each $breakpoint in $breakpoints {
     @for $i from 1 through $layout-max-cols {
       &--cols-#{$breakpoint}-#{$i} {
