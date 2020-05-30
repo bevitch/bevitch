@@ -7,7 +7,6 @@
   <a><img alt="coverage" src="https://codecov.io/gh/bevitch/bevitch/branch/master/graph/badge.svg"></a>
   <a><img alt="license" src="https://img.shields.io/badge/license-MIT-brightgreen.svg"></a>
   <a><img alt="version" src="https://img.shields.io/badge/version-v0.0.3-yellow.svg"></a>
-  <a><img alt="build" src="https://travis-ci.org/what-crud/vue-crud.svg?branch=develop"></a>
   <a><img alt="PRs" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"></a>
 </div>
 
