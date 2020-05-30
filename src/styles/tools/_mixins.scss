@@ -19,6 +19,6 @@
       @content;
     }
   } @else {
-    @warn 'Breakpoint mixin supports: xsm, sm, md, lg';
+    @warn 'Breakpoint mixin supports: sm, md, lg';
   }
 }
