@@ -4,16 +4,16 @@ import { Options } from './index';
 declare module 'vue/types/vue' {
 
   interface Vue {
-      $neVueComponents: Options;
+      $beVitch: Options;
   }
 
   interface VueConstructor {
-      $neVueComponents: Options;
+      $beVitch: Options;
   }
 }
 
 declare module 'vue/types/options' {
   interface ComponentOptions<V extends Vue> {
-      $neVueComponents?: Options;
+      $beVitch?: Options;
   }
 }
