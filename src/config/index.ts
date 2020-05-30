@@ -1,11 +1,12 @@
-import { Options } from '@/types';
+import { Options, Locale } from '@/types';
+import { pl } from './locales/pl';
+import { en } from './locales/en';
 
 const defaultConfig: Options = {
-  dictionary: {
-    search: {
-      search: 'Search',
-      noMatchingItems: 'No matching items'
-    }
+  locale: Locale.PL,
+  locales: {
+    [Locale.PL]: pl,
+    [Locale.EN]: en
   },
   customIcons: {}
 };

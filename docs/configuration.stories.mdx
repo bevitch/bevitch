@@ -13,33 +13,17 @@ So you can define your own dictionary for your app:
 ```ts
 import Vue from 'vue';
 import App from './App.vue';
-import Bevitch from 'bevitch';
+import beVitch from '@bevitch/core';
 
-const bevitchOptions = {
-  dictionary: {
-    search: {
-      search: 'Szukaj',
-      noMatchingItems: 'Brak pasujących wyników'
-    }
-  }
+const beVitchOptions = {
+  locale: 'pl'
 };
 
-Vue.use(Bevitch, bevitchOptions);
+Vue.use(beVitch, beVitchOptions);
 
 new Vue({
   render: h => h(App)
 }).$mount('#app');
-
-```
-
-Default dictionary looks as follows:
-```ts
-  dictionary: {
-    search: {
-      search: 'Search',
-      noMatchingItems: 'No matching items'
-    }
-  }
 ```
 
 ### TypeScript support
@@ -49,19 +33,14 @@ If you are using TypeScript you can import `CustomOptions` interface to validate
 ```ts
 import Vue from 'vue';
 import App from './App.vue';
-import Bevitch from 'bevitch';
-import { CustomOptions } from 'bevitch/src/types';
+import beVitch from '@bevitch/core';
+import { CustomOptions } from '@bevitch/core/src/types';
 
-const bevitchOptions: CustomOptions = {
-  dictionary: {
-    search: {
-      search: 'Szukaj',
-      noMatchingItems: 'Brak pasujących wyników'
-    }
-  }
+const beVitchOptions: CustomOptions = {
+  locale: 'pl'
 };
 
-Vue.use(Bevitch, bevitchOptions);
+Vue.use(beVitch, beVitchOptions);
 
 new Vue({
   render: h => h(App)
@@ -94,76 +73,8 @@ export default Vue.extend({
 <style lang="scss">
 $color-primary: #f99;
 $color-secondary: #f55;
-@import '~bevitch/src/styles/lib.scss';
+@import '~@beVitch/core/src/styles/lib.scss';
 </style>
-```
-
-Default settings:
-```scss
-/* colors */
-
-// monochromatic
-$color-black: #000;
-$color-white: #fff;
-$color-grey: #808080;
-$color-grey-variant: #a4ada4;
-
-// red
-$color-red: #ea1c0d;
-$color-red-variant: #910000;
-
-// green
-$color-green: #8bc34a;
-$color-green-variant: #4caf50;
-
-// blue
-$color-blue: #2b7ba7;
-$color-blue-variant: #3f51b5;
-
-//yellow
-$color-yellow: #ffff00;
-$color-yellow-variant: #ffc107;
-
-//orange
-$color-orange: #ff9508;
-$color-orange-variant: #ff4e08;
-
-// purple
-$color-purple: #8c0aa8;
-$color-purple-variant: #db085d;
-
-// beige
-$color-beige: #d7aa5c;
-$color-beige-variant: #ba6b36;
-
-//translucent
-$color-translucent: rgba(0,0,0,.41);
-
-// aliases
-$color-primary: $color-blue;
-$color-primary-variant: $color-blue;
-$color-secondary: $color-orange;
-$color-secondary-variant: $color-orange-variant;
-$color-success: $color-green;
-$color-info: $color-blue;
-$color-warning: $color-yellow-variant;
-$color-error: $color-red;
-$color-link: $color-blue;
-$color-disabled: $color-grey;
-
-//themes
-$color-theme-dark: darken($color-grey, 30%);
-$color-theme-dark-font: $color-white;
-$color-theme-light: $color-white;
-$color-theme-light-font: $color-grey;
-$color-theme-font-on-primary: $color-white;
-$color-theme-font-on-secondary: $color-white;
-
-
-/* fonts */
-
-$font-main: Roboto, sans-serif;
-$font-main-light: Roboto-Light, sans-serif;
 ```
 
 

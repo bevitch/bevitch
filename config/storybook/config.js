@@ -2,6 +2,14 @@ import { addParameters } from '@storybook/vue';
 import { create } from '@storybook/theming/create';
 import logo from '../../src/assets/images/logo.svg';
 import '../../src/styles/main.scss';
+import Vue from 'vue';
+import beVitch from '../../src/lib-target';
+
+const beVitchOptions = {
+  locale: 'en'
+};
+
+Vue.use(beVitch, beVitchOptions);
 
 addParameters({
   options: {
