@@ -39,4 +39,4 @@ const ClickOutside: DirectiveOptions = {
   }
 };
 
-export default ClickOutside;
+export { ClickOutside };

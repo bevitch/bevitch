@@ -9,7 +9,7 @@ import { Meta } from '@storybook/addon-docs/blocks';
 If you want to import directive in your component use following syntax:
 
 ```ts
-import { ClickOutside } from 'ne-vue-components/dist/directives/directives.common';
+import { ClickOutside } from '@bevitch/core';
 ```
 
 and declare these components in your app:
@@ -38,7 +38,7 @@ Then you can use these components in your template:
 
 If you are using TypeScript in your app, you must declare module for this library, for example:
 
-**/src/@types/ne-vue-components/directives.d.ts**:
+**/src/@types/bevitch.d.ts**:
 ```ts
-declare module 'ne-vue-components/dist/directives/directives.common';
+declare module '@bevitch/core';
 ```
