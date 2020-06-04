@@ -1,0 +1,129 @@
+import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
+import { action } from "@storybook/addon-actions";
+import { linkTo } from '@storybook/addon-links';
+import { withKnobs, select, number } from '@storybook/addon-knobs';
+import { withA11y } from '@storybook/addon-a11y';
+import { bvColors } from '@/config/storybook';
+
+import BvLoader from './BvLoader.vue';
+
+<Meta title="Components|Loader" component={BvLoader} decorators={[withKnobs, withA11y]} />
+
+# BvLoader
+
+<Props of={BvLoader} />
+
+<Preview>
+  <Story name="Example">
+    {{
+      components: { BvLoader },
+      props: {
+        type: {
+          default: select('Loader type', [1, 2, 3, 4], 1)
+        },
+        size: {
+          default: number('Size', 30)
+        },
+        color: {
+          default: select('Color', bvColors, 'primary')
+        },
+      },
+      template: `
+        <BvLoader
+          :type="type"
+          :size="size"
+          :color="color"
+        />`
+    }}
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Type">
+    {{
+      components: { BvLoader },
+      template: `
+        <div>
+          type=1
+          <BvLoader
+            :size="40"
+            :type="1"
+          />
+          type=2
+          <BvLoader
+            :size="40"
+            :type="2"
+          />
+          type=3
+          <BvLoader
+            :size="40"
+            :type="3"
+          />
+          type=4
+          <BvLoader
+            :size="40"
+            :type="4"
+          />
+        <div>`
+    }}
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Size">
+    {{
+      components: { BvLoader },
+      template: `
+        <div>
+          size=20
+          <BvLoader
+            :size="20"
+            :type="1"
+          />
+          size=30
+          <BvLoader
+            :size="30"
+            :type="2"
+          />
+          size=50
+          <BvLoader
+            :size="50"
+            :type="1"
+          />
+          size=123
+          <BvLoader
+            :size="123"
+            :type="1"
+          />
+        <div>`
+    }}
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Color">
+    {{
+      components: { BvLoader },
+      template: `
+        <div>
+          primary
+          <BvLoader color="primary" />
+          primary-variant
+          <BvLoader color="primary-variant" />
+          secondary
+          <BvLoader color="secondary" />
+          secondary-variant
+          <BvLoader color="secondary-variant" />
+          success
+          <BvLoader color="success" />
+          info
+          <BvLoader color="info" />
+          warning
+          <BvLoader color="warning" />
+          error
+          <BvLoader color="error" />
+        <div>`
+    }}
+  </Story>
+</Preview>
+
