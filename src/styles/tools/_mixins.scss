@@ -22,3 +22,11 @@
     @warn 'Breakpoint mixin supports: sm, md, lg';
   }
 }
+
+@mixin animate($name, $duration: 3s, $delay: 0, $timing-function: linear) {
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-delay: $delay;
+  animation-iteration-count: infinite;
+  animation-timing-function: $timing-function;
+}
