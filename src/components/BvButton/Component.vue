@@ -102,5 +102,5 @@ export default mixins(BasicAppearanceProps, ShapeAppearanceProps, LinkBehaviourP
 </script>
 
 <style lang="scss">
-@import './BvButton.scss';
+@import 'styles';
 </style>

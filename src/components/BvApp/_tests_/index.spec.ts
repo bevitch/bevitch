@@ -3,7 +3,7 @@ import Component from '../Component.vue';
 
 const localVue = createLocalVue();
 
-describe('Component.vue', () => {
+describe('BvApp', () => {
   let wrapper: any;
 
   const propsData = {

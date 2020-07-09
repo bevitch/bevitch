@@ -1,9 +1,9 @@
 import { shallowMount, createLocalVue } from '@vue/test-utils';
-import BvButton from './BvButton.vue';
+import Component from '../Component.vue';
 
 const localVue = createLocalVue();
 
-describe('BvButton.vue', () => {
+describe('BvButton', () => {
   let wrapper: any;
 
   const propsData = {
@@ -19,7 +19,7 @@ describe('BvButton.vue', () => {
   };
 
   beforeEach(() => {
-    wrapper = shallowMount(BvButton, {
+    wrapper = shallowMount(Component, {
       localVue,
       propsData,
       stubs: {
@@ -31,7 +31,7 @@ describe('BvButton.vue', () => {
   });
 
   it('Should be defined', () => {
-    expect(wrapper.is(BvButton)).not.toBeUndefined();
+    expect(wrapper.is(Component)).not.toBeUndefined();
   });
 
   it('Should be Vue instance', () => {
