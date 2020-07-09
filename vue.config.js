@@ -3,10 +3,7 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        data: `
-          @import '@/styles/settings/_index';
-          @import '@/styles/tools/_index';
-        `
+        prependData: '@import "~@/styles/index.scss";'
       }
     }
   }

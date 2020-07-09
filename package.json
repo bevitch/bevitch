@@ -5,8 +5,8 @@
   "module": "./dist/lib-no-vue/bevitch.common.js",
   "scripts": {
     "build": "npm run build:inline-vue && npm run build:no-vue",
-    "build:inline-vue": "vue-cli-service build --target lib --name bevitch src/lib-target.ts --dest dist/lib --inline-vue",
-    "build:no-vue": "vue-cli-service build --target lib --name bevitch src/lib-target.ts --dest dist/lib-no-vue",
+    "build:inline-vue": "vue-cli-service build --target lib --name bevitch src/lib.ts --dest dist/lib --inline-vue",
+    "build:no-vue": "vue-cli-service build --target lib --name bevitch src/lib.ts --dest dist/lib-no-vue",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "storybook:build": "vue-cli-service storybook:build -c config/storybook -s ./src/assets",

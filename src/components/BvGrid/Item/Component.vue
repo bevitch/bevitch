@@ -53,5 +53,5 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-@import './BvGridItem.scss';
+@import 'styles';
 </style>
