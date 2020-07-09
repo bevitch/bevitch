@@ -1,3 +1,3 @@
-import BvApp from './BvApp.vue';
+import BvApp from './Component.vue';
 
 export { BvApp };

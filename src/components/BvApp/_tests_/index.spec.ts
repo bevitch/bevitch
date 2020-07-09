@@ -1,9 +1,9 @@
 import { shallowMount, createLocalVue } from '@vue/test-utils';
-import BvApp from './BvApp.vue';
+import Component from '../Component.vue';
 
 const localVue = createLocalVue();
 
-describe('BvApp.vue', () => {
+describe('Component.vue', () => {
   let wrapper: any;
 
   const propsData = {
@@ -11,14 +11,14 @@ describe('BvApp.vue', () => {
   };
 
   beforeEach(() => {
-    wrapper = shallowMount(BvApp, {
+    wrapper = shallowMount(Component, {
       localVue,
       propsData
     });
   });
 
   it('Should be defined', () => {
-    expect(wrapper.is(BvApp)).not.toBeUndefined();
+    expect(wrapper.is(Component)).not.toBeUndefined();
   });
 
   it('Should be Vue instance', () => {

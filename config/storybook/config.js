@@ -21,8 +21,10 @@ addParameters({
 });
 
 import { addDecorator } from '@storybook/vue';
-import BvApp from '../../src/components/BvApp/BvApp.vue';
-import BvButton from '../../src/components/BvButton/BvButton.vue';
+import {
+  BvApp,
+  BvButton
+} from '../../src/components';
 
 addDecorator(() => ({
   data() {
