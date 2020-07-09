@@ -1,9 +1,9 @@
 import { shallowMount, createLocalVue } from '@vue/test-utils';
-import BvGrid from '@/components/BvGrid/BvGrid.vue';
+import Component from '../Component.vue';
 
 const localVue = createLocalVue();
 
-describe('BvGrid.vue as simple grid list', () => {
+describe('BvGrid - as simple grid list', () => {
   let wrapper: any;
   let propsData = {
     colsXs: 2,
@@ -14,14 +14,14 @@ describe('BvGrid.vue as simple grid list', () => {
   };
 
   beforeEach(() => {
-    wrapper = shallowMount(BvGrid, {
+    wrapper = shallowMount(Component, {
       localVue,
       propsData
     });
   });
 
   it('Should be defined', () => {
-    expect(wrapper.is(BvGrid)).not.toBeUndefined();
+    expect(wrapper.is(Component)).not.toBeUndefined();
   });
 
   it('Should be Vue instance', () => {
@@ -33,21 +33,21 @@ describe('BvGrid.vue as simple grid list', () => {
   });
 });
 
-describe('BvGrid.vue as combined grid', () => {
+describe('BvGrid - as combined grid', () => {
   let wrapper: any;
   let propsData = {
     isList: false
   };
 
   beforeEach(() => {
-    wrapper = shallowMount(BvGrid, {
+    wrapper = shallowMount(Component, {
       localVue,
       propsData
     });
   });
 
   it('Should be defined', () => {
-    expect(wrapper.is(BvGrid)).not.toBeUndefined();
+    expect(wrapper.is(Component)).not.toBeUndefined();
   });
 
   it('Should be Vue instance', () => {

@@ -1,4 +1,3 @@
-import BvGrid from './BvGrid.vue';
-import BvGridItem from './BvGridItem/BvGridItem.vue';
-
-export { BvGrid, BvGridItem };
+import BvGrid from './Component.vue';
+export { BvGrid };
+export * from './Item';

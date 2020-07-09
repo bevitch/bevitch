@@ -40,5 +40,5 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-@import './BvLoader.scss';
+@import 'styles';
 </style>

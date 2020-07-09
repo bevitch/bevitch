@@ -1,3 +1,2 @@
-import BvLoader from './BvLoader.vue';
-
+import BvLoader from './Component.vue';
 export { BvLoader };

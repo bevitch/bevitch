@@ -1,21 +1,21 @@
 import { shallowMount, createLocalVue } from '@vue/test-utils';
-import BvLoader from '@/components/BvLoader/BvLoader.vue';
+import Component from '../Component.vue';
 
 const localVue = createLocalVue();
 
-describe('BvLoader.vue', () => {
+describe('BvLoader', () => {
   let wrapper: any;
   let propsData = {};
 
   beforeEach(() => {
-    wrapper = shallowMount(BvLoader, {
+    wrapper = shallowMount(Component, {
       localVue,
       propsData
     });
   });
 
   it('Should be defined', () => {
-    expect(wrapper.is(BvLoader)).not.toBeUndefined();
+    expect(wrapper.is(Component)).not.toBeUndefined();
   });
 
   it('Should be Vue instance', () => {
