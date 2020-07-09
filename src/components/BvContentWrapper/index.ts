@@ -1,3 +1,2 @@
-import BvContentWrapper from './BvContentWrapper.vue';
-
+import BvContentWrapper from './Component.vue';
 export { BvContentWrapper };

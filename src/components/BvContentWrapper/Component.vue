@@ -34,5 +34,5 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-@import './BvContentWrapper.scss';
+@import 'styles';
 </style>
