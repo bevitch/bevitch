@@ -1,0 +1,83 @@
+import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
+import { action } from "@storybook/addon-actions";
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+import { withA11y } from '@storybook/addon-a11y';
+import { bvColors } from '@/config/storybook';
+import ExampleStory from './_stories_/Example.vue';
+import ThemeStory from './_stories_/Theme.vue';
+import ClickEventStory from './_stories_/ClickEvent.vue';
+import SizeStory from './_stories_/Size.vue';
+import ColorStory from './_stories_/Color.vue';
+import ElevationStory from './_stories_/Elevation.vue';
+import DisabilityStory from './_stories_/Disability.vue';
+import RoundingStory from './_stories_/Rounding.vue';
+import FlatnessStory from './_stories_/Flatness.vue';
+import OutlineStory from './_stories_/Outline.vue';
+
+import { BvButton } from './index';
+
+<Meta title="Components|Button" component={BvButton} decorators={[withKnobs, withA11y]} />
+
+# Button
+
+<Props of={BvButton} />
+
+<Preview>
+  <Story name="Example">
+    {() => (ExampleStory)}
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Theme">
+    {() => (ThemeStory)}
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Click event">
+    {() => (ClickEventStory)}
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Size">
+    {() => (SizeStory)}
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Color">
+    {() => (ColorStory)}
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Elevation">
+    {() => (ElevationStory)}
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Disability">
+    {() => (DisabilityStory)}
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Rounding">
+    {() => (RoundingStory)}
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Flatness">
+    {() => (FlatnessStory)}
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Outline">
+    {() => (OutlineStory)}
+  </Story>
+</Preview>
