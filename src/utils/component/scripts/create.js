@@ -55,6 +55,8 @@ const propmptForComponentName = () => {
         from: '#COMPONENT_PATH#',
         to: componentNamespace.length > 0 ? `${componentNamespace.join('/')}/${dirName}` : componentName
       });
+      fs.appendFile(`${path}/index.ts`, `export * from './${dirName}';\n`, () => {});
+      fs.appendFile(`\n${path}/index.scss`, `@import './${dirName}';`, () => {});
       console.log(`${componentName} component has been created`);
     });
 };
