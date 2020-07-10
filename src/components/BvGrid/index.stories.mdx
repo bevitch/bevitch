@@ -1,104 +1,29 @@
 import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
-import { action } from "@storybook/addon-actions";
-import { linkTo } from '@storybook/addon-links';
-import { withKnobs, boolean, select } from '@storybook/addon-knobs';
+import { withKnobs } from '@storybook/addon-knobs';
 import { withA11y } from '@storybook/addon-a11y';
+import ExampleStory from './_stories_/Example.vue';
+import CombinedStory from './_stories_/Combined.vue';
 
 import { BvGrid, BvGridItem } from './index';
-const columnNumber = [
-  null, 1, 2, 3, 4, 6, 12
-];
 
-<Meta title="Components|BvGrid" component={BvGrid} decorators={[withKnobs, withA11y]} />
+<Meta
+  title="Components|BvGrid"
+  component={BvGrid}
+  decorators={[withKnobs, withA11y]}
+/>
 
 # BvGrid
 
 <Props of={BvGrid} />
 
 <Preview>
-  <Story name="Simple grid example">
-    {{
-      components: { BvGrid, BvGridItem },
-      props: {
-        colsXs: {
-          default: select('xs row cols number', columnNumber, 3)
-        },
-        colsSm: {
-          default: select('sm row cols number', columnNumber, null)
-        },
-        colsMd: {
-          default: select('md row cols number', columnNumber, null)
-        },
-        colsLg: {
-          default: select('lg row cols number', columnNumber, null)
-        },
-        isList: {
-          default: boolean('Is list type', false)
-        },
-      },
-      template: `
-        <div>
-          <h2 class="bv--title">Simple grid</h2>
-          <p>
-            Creates layout with equal items width. <br>
-            Declare number of columns from 12 column grid each item shoudl take on grid component.
-          </p>
-          <BvGrid
-            :colsXs="colsXs"
-            :colsSm="colsSm"
-            :colsMd="colsMd"
-            :colsLg="colsLg"
-            :isList="isList"
-          >
-            <BvGridItem :isList="isList" class="bv--color-primary" style="height: 150px; padding: 10px;">item 1</BvGridItem>
-            <BvGridItem :isList="isList" class="bv--color-primary" style="height: 150px; padding: 10px;">item 2</BvGridItem>
-            <BvGridItem :isList="isList" class="bv--color-primary" style="height: 150px; padding: 10px;">item 3</BvGridItem>
-            <BvGridItem :isList="isList" class="bv--color-primary" style="height: 150px; padding: 10px;">item 4</BvGridItem>
-            <BvGridItem :isList="isList" class="bv--color-primary" style="height: 150px; padding: 10px;">item 5</BvGridItem>
-            <BvGridItem :isList="isList" class="bv--color-primary" style="height: 150px; padding: 10px;">item 6</BvGridItem>
-            <BvGridItem :isList="isList" class="bv--color-primary" style="height: 150px; padding: 10px;">item 7</BvGridItem>
-            <BvGridItem :isList="isList" class="bv--color-primary" style="height: 150px; padding: 10px;">item 8</BvGridItem>
-          </BvGrid>
-        </div>
-      `
-    }}
+  <Story name="Example">
+    {() => (ExampleStory)}
   </Story>
 </Preview>
 
-# BvGridItem
-
-<Props of={BvGridItem} />
-
 <Preview>
-  <Story name="Combined grid">
-    {{
-      components: { BvGrid, BvGridItem},
-      props: {
-        isList: {
-          default: boolean('Is list type', false)
-        }
-      },
-      template: `
-        <div>
-          <h2 class="bv--title">Combined grid</h2>
-          <p>
-            Creates layout with different items width. <br>
-            Declare number of columns from 12 column grid each item shoudl take on grid item component.
-          </p>
-          <BvGrid
-            :isList="isList"
-          >
-            <BvGridItem :isList="isList" :cols-md="3" :cols-lg="9" class="bv--color-primary" style="height: 150px; padding: 10px;">cols-md="3" cols-lg="9"</BvGridItem>
-            <BvGridItem :isList="isList" :cols-md="3" class="bv--color-secondary" style="height: 150px; padding: 10px;">cols-md="3"</BvGridItem>
-            <BvGridItem :isList="isList" :cols-md="3" class="bv--color-primary-variant" style="height: 150px; padding: 10px;">cols-md="3"</BvGridItem>
-            <BvGridItem :isList="isList" :cols-md="3" class="bv--color-secondary-variant" style="height: 150px; padding: 10px;">cols-md="3"</BvGridItem>
-            <BvGridItem :isList="isList" :cols-sm="6" :cols-lg="2" class="bv--color-primary" style="height: 150px; padding: 10px;">cols-sm="6" cols-lg="2"</BvGridItem>
-            <BvGridItem :isList="isList" :cols-sm="6" :cols-lg="2" class="bv--color-secondary" style="height: 150px; padding: 10px;">cols-sm="6" cols-lg="2"</BvGridItem>
-            <BvGridItem :isList="isList" :cols-sm="6" :cols-lg="2" class="bv--color-primary-variant" style="height: 150px; padding: 10px;">cols-sm="6" cols-lg="2"</BvGridItem>
-            <BvGridItem :isList="isList" :cols-sm="6" :cols-lg="2" class="bv--color-secondary-variant" style="height: 150px; padding: 10px;">cols-sm="6" cols-lg="2"</BvGridItem>
-          </BvGrid>
-        </div>
-      `
-    }}
+  <Story name="Combined">
+    {() => (CombinedStory)}
   </Story>
 </Preview>
