@@ -1,5 +1,5 @@
 <template>
-  <div />
+  <div class="bv-component" />
 </template>
 
 <script lang="ts">

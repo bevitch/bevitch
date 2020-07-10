@@ -33,6 +33,18 @@ const propmptForComponentName = () => {
         from: /BvComponent/g,
         to: componentName
       });
+      const pascalToKebabCase = (string) => {
+        return string
+          .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
+          .replace(/([A-Z])([A-Z])(?=[a-z])/g, '$1-$2')
+          .toLowerCase();
+      };
+      const kebabCaseComponentName = pascalToKebabCase(componentName);
+      replace.sync({
+        files: ['Component.vue', 'styles.scss'].map(file => `${componentPath}/${file}`),
+        from: /bv-component/g,
+        to: kebabCaseComponentName
+      });
     });
 };
 
