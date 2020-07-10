@@ -41,7 +41,7 @@
 import { BvButton } from '@/components';
 
 export default {
-  name: 'BvButtonSizeStory',
+  name: 'BvButtonColorStory',
   components: { BvButton }
 };
 </script>
