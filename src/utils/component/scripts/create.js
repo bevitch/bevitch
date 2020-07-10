@@ -1,7 +1,9 @@
 const inquirer = require('inquirer');
 const fs = require('fs-extra');
+const replace = require('replace-in-file');
 const templatePath = './src/utils/component/template';
-let rootPath = './src/components';
+const rootPath = './src/components';
+
 let componentNamespace = [];
 let dirName;
 let path = rootPath;
@@ -17,9 +19,20 @@ const propmptForComponentName = () => {
     ])
     .then(answers => {
       dirName = answers.componentName;
-      fs.copySync(templatePath, `${path}/${dirName}`);
+      const componentPath = `${path}/${dirName}`;
+      fs.copySync(templatePath, componentPath);
       const componentName = `${componentNamespace.join('')}${dirName}`;
-      console.log(componentName);
+      replace.sync({
+        files: [
+          'Component.vue',
+          'index.ts',
+          'index.stories.mdx',
+          'index.spec.ts',
+          '_stories_/Example.vue'
+        ].map(file => `${componentPath}/${file}`),
+        from: /BvComponent/g,
+        to: componentName
+      });
     });
 };
 
