@@ -27,8 +27,9 @@ const propmptForComponentName = () => {
           'Component.vue',
           'index.ts',
           'index.stories.mdx',
-          'index.spec.ts',
-          '_stories_/Example.vue'
+          '_stories_/Example.vue',
+          '_tests_/index.spec.ts',
+          '_tests_/index.snap.js'
         ].map(file => `${componentPath}/${file}`),
         from: /BvComponent/g,
         to: componentName
@@ -41,7 +42,11 @@ const propmptForComponentName = () => {
       };
       const kebabCaseComponentName = pascalToKebabCase(componentName);
       replace.sync({
-        files: ['Component.vue', 'styles.scss'].map(file => `${componentPath}/${file}`),
+        files: [
+          'Component.vue',
+          'styles.scss',
+          '_tests_/index.snap.js'
+        ].map(file => `${componentPath}/${file}`),
         from: /bv-component/g,
         to: kebabCaseComponentName
       });
