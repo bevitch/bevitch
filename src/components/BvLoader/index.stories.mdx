@@ -1,16 +1,17 @@
 import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
-import { action } from "@storybook/addon-actions";
-import { linkTo } from '@storybook/addon-links';
-import { withKnobs, select, number } from '@storybook/addon-knobs';
+import { withKnobs } from '@storybook/addon-knobs';
 import { withA11y } from '@storybook/addon-a11y';
-import { bvColors } from '@/config/storybook';
 import ExampleStory from './_stories_/Example.vue';
 import SizeStory from './_stories_/Size.vue';
 import ColorStory from './_stories_/Color.vue';
 
 import { BvLoader } from './index';
 
-<Meta title="Components|Loader" component={BvLoader} decorators={[withKnobs, withA11y]} />
+<Meta
+  title="Components|Loader"
+  component={BvLoader}
+  decorators={[withKnobs, withA11y]}
+/>
 
 # BvLoader
 

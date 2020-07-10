@@ -1,7 +1,6 @@
 import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
 import { withKnobs } from '@storybook/addon-knobs';
 import { withA11y } from '@storybook/addon-a11y';
-import { bvColors } from '@/config/storybook';
 import ExampleStory from './_stories_/Example.vue';
 import ThemeStory from './_stories_/Theme.vue';
 import ClickEventStory from './_stories_/ClickEvent.vue';
@@ -15,7 +14,11 @@ import OutlineStory from './_stories_/Outline.vue';
 
 import { BvButton } from './index';
 
-<Meta title="Components|Button" component={BvButton} decorators={[withKnobs, withA11y]} />
+<Meta
+  title="Components|Button"
+  component={BvButton}
+  decorators={[withKnobs, withA11y]}
+/>
 
 # Button
 
