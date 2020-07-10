@@ -1,0 +1,22 @@
+import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs } from '@storybook/addon-knobs';
+import { withA11y } from '@storybook/addon-a11y';
+import ExampleStory from './_stories_/Example.vue';
+
+import { BvComponent } from './index';
+
+<Meta
+  title="Components|BvComponent"
+  component={BvComponent}
+  decorators={[withKnobs, withA11y]}
+/>
+
+# BvComponent
+
+<Props of={BvComponent} />
+
+<Preview>
+  <Story name="Example">
+    {() => (ExampleStory)}
+  </Story>
+</Preview>
