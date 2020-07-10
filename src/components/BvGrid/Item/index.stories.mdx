@@ -1,15 +1,15 @@
 import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
-import { action } from "@storybook/addon-actions";
-import { linkTo } from '@storybook/addon-links';
-import { withKnobs, select } from '@storybook/addon-knobs';
+import { withKnobs } from '@storybook/addon-knobs';
 import { withA11y } from '@storybook/addon-a11y';
+import ExampleStory from './_stories_/Example.vue';
 
 import { BvGridItem } from './index';
-const columnNumber = [
-  null, 1, 2, 3, 4, 6, 9, 12
-];
 
-<Meta title="Components|BvGrid/Item" component={BvGridItem} decorators={[withKnobs, withA11y]} />
+<Meta
+  title="Components|BvGrid/Item"
+  component={BvGridItem}
+  decorators={[withKnobs, withA11y]}
+/>
 
 # BvGridItem
 
@@ -17,42 +17,7 @@ const columnNumber = [
 
 <Preview>
   <Story name="Example">
-    {{
-      components: { BvGridItem },
-      props: {
-        colsXs: {
-          default: select('xs cols number', columnNumber, 3)
-        },
-        colsSm: {
-          default: select('sm cols number', columnNumber, null)
-        },
-        colsMd: {
-          default: select('md cols number', columnNumber, null)
-        },
-        colsLg: {
-          default: select('lg cols number', columnNumber, null)
-        },
-      },
-      template: `
-        <div>
-          <h2 class="bv--title">Grid item</h2>
-          <p>
-            Creates element of selectet width. Can be used without grid component <br>
-            Declare number of columns from 12 column grid item shoudl take.
-          </p>
-          <BvGridItem
-            :colsXs="colsXs"
-            :colsSm="colsSm"
-            :colsMd="colsMd"
-            :colsLg="colsLg"
-            class="bv--color-primary"
-            style="height: 150px; padding: 10px;"
-          >
-            Configure me
-          </BvGridItem>
-        </div>
-      `
-    }}
+    {() => (ExampleStory)}
   </Story>
 </Preview>
 
