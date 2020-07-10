@@ -45,6 +45,12 @@ const propmptForComponentName = () => {
         from: /bv-component/g,
         to: kebabCaseComponentName
       });
+      replace.sync({
+        files: `${componentPath}/index.stories.mdx`,
+        from: '#COMPONENT_PATH#',
+        to: componentNamespace.length > 0 ? `${componentNamespace.join('/')}/${dirName}` : componentName
+      });
+      console.log(`${componentName} component has been created`);
     });
 };
 

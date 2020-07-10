@@ -1,5 +1,7 @@
 <template>
-  <div class="bv-component" />
+  <div class="bv-component">
+    BvComponent
+  </div>
 </template>
 
 <script lang="ts">
