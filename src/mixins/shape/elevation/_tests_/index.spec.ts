@@ -15,6 +15,7 @@ describe('elevation mixin', () => {
     template: `
       <div
         :elevated="elevated"
+        :class="elevationClass"
       />
     `
   });
@@ -34,7 +35,26 @@ describe('elevation mixin', () => {
     expect(wrapper.isVueInstance()).toBe(true);
   });
 
-  it('Should match snapshot', () => {
-    expect(wrapper.element).toMatchSnapshot();
+  describe('Snapshots', () => {
+    describe('elevated property equals true', () => {
+      beforeEach(() => {
+        wrapper.setProps({
+          elevated: true
+        });
+      });
+      it('Should match snapshot', () => {
+        expect(wrapper.element).toMatchSnapshot();
+      });
+    });
+    describe('elevated property equals false', () => {
+      beforeEach(() => {
+        wrapper.setProps({
+          elevated: false
+        });
+      });
+      it('Should match snapshot', () => {
+        expect(wrapper.element).toMatchSnapshot();
+      });
+    });
   });
 });
