@@ -1,14 +1,17 @@
 import { shallowMount, createLocalVue } from '@vue/test-utils';
-import ThemeMixin from '../index';
+import Mixin from '../index';
 
 const localVue = createLocalVue();
 
-describe('ThemeMixin.vue', () => {
+describe('theme mixin', () => {
   let wrapper: any;
 
-  const propsData = {};
+  const propsData = {
+    dark: true,
+    light: false
+  };
 
-  const Component = ThemeMixin.extend({
+  const Component = Mixin.extend({
     name: 'ComponentName',
     template: `
       <div

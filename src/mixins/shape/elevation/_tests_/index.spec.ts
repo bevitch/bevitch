@@ -1,14 +1,16 @@
 import { shallowMount, createLocalVue } from '@vue/test-utils';
-import ElevationMixin from '../index';
+import Mixin from '../index';
 
 const localVue = createLocalVue();
 
-describe('ElevationMixin.vue', () => {
+describe('elevation mixin', () => {
   let wrapper: any;
 
-  const propsData = {};
+  const propsData = {
+    elevated: true
+  };
 
-  const Component = ElevationMixin.extend({
+  const Component = Mixin.extend({
     name: 'ComponentName',
     template: `
       <div

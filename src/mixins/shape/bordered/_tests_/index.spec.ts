@@ -1,14 +1,16 @@
 import { shallowMount, createLocalVue } from '@vue/test-utils';
-import BorderedMixin from '../index';
+import Mixin from '../index';
 
 const localVue = createLocalVue();
 
-describe('BorderedMixin.vue', () => {
+describe('bordered mixin', () => {
   let wrapper: any;
 
-  const propsData = {};
+  const propsData = {
+    bordered: true
+  };
 
-  const Component = BorderedMixin.extend({
+  const Component = Mixin.extend({
     name: 'ComponentName',
     template: `
       <div

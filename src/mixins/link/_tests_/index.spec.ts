@@ -1,14 +1,16 @@
 import { shallowMount, createLocalVue } from '@vue/test-utils';
-import LinkMixin from '../index';
+import Mixin from '../index';
 
 const localVue = createLocalVue();
 
-describe('LinkMixin.vue', () => {
+describe('link mixin', () => {
   let wrapper: any;
 
-  const propsData = {};
+  const propsData = {
+    href: 'https://some-url.com'
+  };
 
-  const Component = LinkMixin.extend({
+  const Component = Mixin.extend({
     name: 'ComponentName',
     template: `
       <component

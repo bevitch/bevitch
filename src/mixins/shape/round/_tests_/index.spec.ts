@@ -1,14 +1,16 @@
 import { shallowMount, createLocalVue } from '@vue/test-utils';
-import RoundMixin from '../index';
+import Mixin from '../index';
 
 const localVue = createLocalVue();
 
-describe('RoundMixin.vue', () => {
+describe('round mixin', () => {
   let wrapper: any;
 
-  const propsData = {};
+  const propsData = {
+    round: true
+  };
 
-  const Component = RoundMixin.extend({
+  const Component = Mixin.extend({
     name: 'ComponentName',
     template: `
       <div

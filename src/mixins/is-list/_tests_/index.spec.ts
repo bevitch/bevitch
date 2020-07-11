@@ -1,16 +1,16 @@
 import { shallowMount, createLocalVue } from '@vue/test-utils';
-import IsListMixin from '../index';
+import Mixin from '../index';
 
 const localVue = createLocalVue();
 
-describe('IsListMixin.vue', () => {
+describe('is-list mixin', () => {
   let wrapper: any;
 
   const propsData = {
     isList: true
   };
 
-  const Component = IsListMixin.extend({
+  const Component = Mixin.extend({
     name: 'ComponentName',
     template: '<component :is="rootTag" />'
   });

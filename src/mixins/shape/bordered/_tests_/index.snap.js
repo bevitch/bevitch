@@ -1,3 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BorderedMixin.vue Should match snapshot 1`] = `<div />`;
+exports[`bordered mixin Should match snapshot 1`] = `
+<div
+  bordered="true"
+/>
+`;
