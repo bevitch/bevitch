@@ -1,21 +1,21 @@
 {
   "name": "@bevitch/core",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "main": "./dist/lib-no-vue/bevitch.common.js",
   "module": "./dist/lib-no-vue/bevitch.common.js",
   "scripts": {
     "build": "npm run build:inline-vue && npm run build:no-vue",
-    "build:inline-vue": "vue-cli-service build --target lib --name bevitch src/lib-target.ts --dest dist/lib --inline-vue",
-    "build:no-vue": "vue-cli-service build --target lib --name bevitch src/lib-target.ts --dest dist/lib-no-vue",
+    "build:inline-vue": "vue-cli-service build --target lib --name bevitch src/lib.ts --dest dist/lib --inline-vue",
+    "build:no-vue": "vue-cli-service build --target lib --name bevitch src/lib.ts --dest dist/lib-no-vue",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "storybook:build": "vue-cli-service storybook:build -c config/storybook -s ./src/assets",
-    "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c config/storybook -s ./src/assets"
+    "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c config/storybook -s ./src/assets",
+    "component:create": "node ./src/utils/component/scripts/create"
   },
   "dependencies": {
     "core-js": "^3.6.4",
     "vue": "^2.6.11",
-    "vue-property-decorator": "^8.4.1",
     "vue-router": "^3.1.6"
   },
   "devDependencies": {
@@ -41,16 +41,19 @@
     "codecov": "^3.7.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
-    "fs-extra": "^9.0.0",
+    "fs-extra": "^9.0.1",
     "husky": "^4.2.5",
+    "inquirer": "^7.3.1",
     "lint-staged": "^9.5.0",
+    "lodash": "^4.17.19",
     "node-sass": "^4.14.1",
+    "power-assert": "^1.6.1",
+    "replace-in-file": "^6.1.0",
     "sass-lint": "^1.13.1",
     "sass-loader": "^8.0.2",
     "typescript": "~3.7.5",
     "vue-cli-plugin-storybook": "^1.2.2",
-    "vue-template-compiler": "^2.6.11",
-    "vue-typed-mixins": "^0.2.0"
+    "vue-template-compiler": "^2.6.11"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"

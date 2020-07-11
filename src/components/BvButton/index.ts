@@ -1,3 +1,2 @@
-import BvButton from './BvButton.vue';
-
+import BvButton from './Component.vue';
 export { BvButton };

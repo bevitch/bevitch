@@ -25,7 +25,6 @@ export interface CustomOptions {
   };
   customIcons?: CustomIcons;
 }
-
 export interface ColorsSettings {
   dark?: boolean;
   light?: boolean;
@@ -35,3 +34,15 @@ export interface ColorsSettings {
   hoverColor?: string;
   hoverTextColor?: string;
 }
+
+export type CssClass =
+  string |
+  {
+    [key in string]: boolean
+  } |
+  (
+    string |
+    {
+      [key in string]: boolean
+    }
+  )[];

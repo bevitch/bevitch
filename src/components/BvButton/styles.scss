@@ -1,0 +1,46 @@
+.bv-button {
+  font-family: $font-main;
+  font-weight: normal;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: $hover-transition;
+
+  &--sm {
+    font-size: 10px;
+    line-height: 20px;
+    padding: 0 $spacer * 2;
+  }
+
+  &--md {
+    font-size: 13px;
+    line-height: 30px;
+    padding: 0 $spacer * 3;
+  }
+
+  &--lg {
+    font-size: 16px;
+    line-height: 40px;
+    padding: 0 $spacer * 4;
+  }
+
+  &--rounded {
+    border-radius: 1.2em;
+  }
+
+  &--elevated {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, .3);
+  }
+
+  &--outlined {
+    border-width: 1px;
+    border-style: solid;
+  }
+
+  &--disabled {
+    color: darken($color-disabled, 40%);
+    background-color: $color-disabled;
+    pointer-events: none;
+  }
+}

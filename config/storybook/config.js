@@ -1,9 +1,8 @@
 import { addParameters } from '@storybook/vue';
 import { create } from '@storybook/theming/create';
 import logo from '../../src/assets/images/logo.svg';
-import '../../src/styles/main.scss';
 import Vue from 'vue';
-import beVitch from '../../src/lib-target';
+import beVitch from '../../src/lib';
 
 const beVitchOptions = {
   locale: 'en'
@@ -21,8 +20,10 @@ addParameters({
 });
 
 import { addDecorator } from '@storybook/vue';
-import BvApp from '../../src/components/BvApp/BvApp.vue';
-import BvButton from '../../src/components/BvButton/BvButton.vue';
+import {
+  BvApp,
+  BvButton
+} from '../../src/components';
 
 addDecorator(() => ({
   data() {

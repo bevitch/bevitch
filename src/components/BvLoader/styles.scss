@@ -1,0 +1,130 @@
+$loader-duration: 3s !default;
+
+@keyframes resize {
+  0%, 100% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);;
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes plop {
+  0%, 100% {
+    transform: scale(0.5);
+  }
+  16.66% {
+    transform: scale(1.2);
+  }
+  33.34% {
+    transform: scale(0.5);
+  }
+}
+
+@keyframes hops {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.3;
+  }
+  16.66% {
+    transform: translate(0, calc(-1 * var(--loader-initial-size)/3));
+    opacity: 1;
+  }
+  33.34% {
+    transform: translate(0, 0);
+    opacity: 0.3;
+  }
+}
+
+.bv-loader {
+  $root: &;
+  width: var(--loader-initial-size);
+  height: var(--loader-initial-size);
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(.2 * var(--loader-initial-size));
+  &__circle {
+    border-radius: 50%;
+    width: calc(var(--loader-initial-size) / 2);
+    height: calc(var(--loader-initial-size) / 2);
+  }
+  &--1 {
+    @include animate(rotate);
+    #{$root}__circle {
+      transform: scale(0);
+      &:nth-child(1) {
+        @include animate(resize, $loader-duration, 1s, cubic-bezier(0.4, 0, 1, 0.8));
+      }
+      &:nth-child(2) {
+        opacity: .75;
+        @include animate(resize, $loader-duration, 0, cubic-bezier(0.4, 0, 1, 0.8));
+      }
+      &:nth-child(3) {
+        opacity: .5;
+        @include animate(resize, $loader-duration, 2s, cubic-bezier(0.4, 0, 1, 0.8));
+      }
+    }
+  }
+  &--2 {
+    @include animate(rotate);
+    #{$root}__circle {
+      transform: scale(0);
+      &:nth-child(1) {
+        @include animate(resize, 2 * $loader-duration, 1s, cubic-bezier(0.4, 0, 1, 0.8));
+        transform-origin: bottom right;
+      }
+      &:nth-child(2) {
+        opacity: .75;
+        @include animate(resize, 2 * $loader-duration, 0, cubic-bezier(0.4, 0, 1, 0.8));
+        transform-origin: bottom left;
+      }
+      &:nth-child(3) {
+        opacity: .5;
+        @include animate(resize, 2 * $loader-duration, 2s, cubic-bezier(0.4, 0, 1, 0.8));
+        transform-origin: top right;
+      }
+    }
+  }
+  &--3 {
+    justify-content: space-between;
+    align-items: center;
+    #{$root}__circle {
+      width: calc(var(--loader-initial-size) / 4);
+      height: calc(var(--loader-initial-size) / 4);
+      &:nth-child(1) {
+        @include animate(plop, $loader-duration, 0, ease-in-out);
+      }
+      &:nth-child(2) {
+        @include animate(plop, $loader-duration, 0.25s, ease-in-out);
+      }
+      &:nth-child(3) {
+         @include animate(plop, $loader-duration, .5s, ease-in-out);
+      }
+    }
+  }
+  &--4 {
+    justify-content: space-between;
+    align-items: flex-end;
+    #{$root}__circle {
+      width: calc(var(--loader-initial-size) / 4);
+      height: calc(var(--loader-initial-size) / 4);
+      &:nth-child(1) {
+        @include animate(hops, $loader-duration, 0, ease-in-out);
+      }
+      &:nth-child(2) {
+        @include animate(hops, $loader-duration, 0.5s, ease-in-out);
+      }
+      &:nth-child(3) {
+        @include animate(hops, $loader-duration, 1s, ease-in-out);
+      }
+    }
+  }
+}
