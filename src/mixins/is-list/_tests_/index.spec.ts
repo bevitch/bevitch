@@ -20,8 +20,6 @@ describe('is-list mixin', () => {
       localVue,
       propsData
     });
-
-    wrapper.vm.$emit = jest.fn();
   });
 
   it('Should be defined', () => {
@@ -32,8 +30,27 @@ describe('is-list mixin', () => {
     expect(wrapper.isVueInstance()).toBe(true);
   });
 
-  it('Should match snapshot', () => {
-    expect(wrapper.element).toMatchSnapshot();
+  describe('Snapshots', () => {
+    describe('isList property equals true', () => {
+      beforeEach(() => {
+        wrapper.setProps({
+          isList: true
+        });
+      });
+      it('Should match snapshot', () => {
+        expect(wrapper.element).toMatchSnapshot();
+      });
+    });
+    describe('isList property equals false', () => {
+      beforeEach(() => {
+        wrapper.setProps({
+          isList: false
+        });
+      });
+      it('Should match snapshot', () => {
+        expect(wrapper.element).toMatchSnapshot();
+      });
+    });
   });
 
   describe('rootTag computed property', () => {
