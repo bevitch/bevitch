@@ -15,6 +15,7 @@ describe('bordered mixin', () => {
     template: `
       <div
         :bordered="bordered"
+        :class="borderedClass"
       />
     `
   });
@@ -34,7 +35,26 @@ describe('bordered mixin', () => {
     expect(wrapper.isVueInstance()).toBe(true);
   });
 
-  it('Should match snapshot', () => {
-    expect(wrapper.element).toMatchSnapshot();
+  describe('Snapshots', () => {
+    describe('bordered property equals true', () => {
+      beforeEach(() => {
+        wrapper.setProps({
+          bordered: true
+        });
+      });
+      it('Should match snapshot', () => {
+        expect(wrapper.element).toMatchSnapshot();
+      });
+    });
+    describe('bordered property equals false', () => {
+      beforeEach(() => {
+        wrapper.setProps({
+          bordered: false
+        });
+      });
+      it('Should match snapshot', () => {
+        expect(wrapper.element).toMatchSnapshot();
+      });
+    });
   });
 });

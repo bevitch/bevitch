@@ -42,10 +42,6 @@ describe('link mixin', () => {
     expect(wrapper.isVueInstance()).toBe(true);
   });
 
-  it('Should match snapshot', () => {
-    expect(wrapper.element).toMatchSnapshot();
-  });
-
   describe('Snapshots', () => {
     describe('to property is defined', () => {
       beforeEach(() => {
