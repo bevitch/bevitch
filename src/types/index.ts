@@ -29,9 +29,21 @@ export interface CustomOptions {
 export interface ColorsSettings {
   dark?: boolean;
   light?: boolean;
-  color?: string;
-  textColor?: string;
-  borderColor?: string;
-  hoverColor?: string;
-  hoverTextColor?: string;
+  bgColor?: string | null;
+  color?: string | null;
+  borderColor?: string | null;
+  hoverBgColor?: string | null;
+  hoverColor?: string | null;
 }
+
+export type CssClass =
+  string |
+  {
+    [key in string]: boolean
+  } |
+  (
+    string |
+    {
+      [key in string]: boolean
+    }
+  )[];
