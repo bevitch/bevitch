@@ -15,6 +15,7 @@ describe('rounded mixin', () => {
     template: `
       <div
         :rounded="rounded"
+        :class="roundedClass"
       />
     `
   });
@@ -34,7 +35,26 @@ describe('rounded mixin', () => {
     expect(wrapper.isVueInstance()).toBe(true);
   });
 
-  it('Should match snapshot', () => {
-    expect(wrapper.element).toMatchSnapshot();
+  describe('Snapshots', () => {
+    describe('rounded property equals true', () => {
+      beforeEach(() => {
+        wrapper.setProps({
+          rounded: true
+        });
+      });
+      it('Should match snapshot', () => {
+        expect(wrapper.element).toMatchSnapshot();
+      });
+    });
+    describe('rounded property equals false', () => {
+      beforeEach(() => {
+        wrapper.setProps({
+          rounded: false
+        });
+      });
+      it('Should match snapshot', () => {
+        expect(wrapper.element).toMatchSnapshot();
+      });
+    });
   });
 });
