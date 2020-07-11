@@ -1,27 +1,14 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import ExampleStory from './_stories_/Example.vue';
 
 import ClickOutside from './index';
 
-<Meta title="Directives|Click outside" />
+<Meta title="Directives|ClickOutside" />
 
-# Click outside
+# ClickOutside
 
 <Preview>
   <Story name="Example">
-    {{
-      directives: {
-        ClickOutside
-      },
-      methods: {
-        onOutsideClick() {
-          console.log('clicked outside');
-        }
-      },
-      template: `
-        <div v-click-outside="onOutsideClick" style="background-color: #000; color: #fff;">
-          Click outside of me and check console
-        </div>
-      `
-    }}
+    {() => (ExampleStory)}
   </Story>
 </Preview>
