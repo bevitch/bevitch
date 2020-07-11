@@ -25,15 +25,14 @@ export interface CustomOptions {
   };
   customIcons?: CustomIcons;
 }
-
 export interface ColorsSettings {
   dark?: boolean;
   light?: boolean;
-  bgColor?: string | null;
-  color?: string | null;
-  borderColor?: string | null;
-  hoverBgColor?: string | null;
-  hoverColor?: string | null;
+  color?: string;
+  textColor?: string;
+  borderColor?: string;
+  hoverColor?: string;
+  hoverTextColor?: string;
 }
 
 export type CssClass =
