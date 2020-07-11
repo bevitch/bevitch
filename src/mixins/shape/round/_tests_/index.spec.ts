@@ -15,6 +15,7 @@ describe('round mixin', () => {
     template: `
       <div
         :round="round"
+        :class="roundClass"
       />
     `
   });
@@ -34,7 +35,26 @@ describe('round mixin', () => {
     expect(wrapper.isVueInstance()).toBe(true);
   });
 
-  it('Should match snapshot', () => {
-    expect(wrapper.element).toMatchSnapshot();
+  describe('Snapshots', () => {
+    describe('round property equals true', () => {
+      beforeEach(() => {
+        wrapper.setProps({
+          round: true
+        });
+      });
+      it('Should match snapshot', () => {
+        expect(wrapper.element).toMatchSnapshot();
+      });
+    });
+    describe('round property equals false', () => {
+      beforeEach(() => {
+        wrapper.setProps({
+          round: false
+        });
+      });
+      it('Should match snapshot', () => {
+        expect(wrapper.element).toMatchSnapshot();
+      });
+    });
   });
 });
