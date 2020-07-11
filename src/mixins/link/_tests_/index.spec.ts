@@ -46,7 +46,44 @@ describe('link mixin', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
-  describe('Component property', () => {
+  describe('Snapshots', () => {
+    describe('to property is defined', () => {
+      beforeEach(() => {
+        wrapper.setProps({
+          to: {
+            name: 'some-route'
+          }
+        });
+      });
+      it('Should match snapshot', () => {
+        expect(wrapper.element).toMatchSnapshot();
+      });
+    });
+    describe('to property is not defined', () => {
+      beforeEach(() => {
+        wrapper.setProps({
+          to: null,
+          href: 'https://some-url.com'
+        });
+      });
+      it('Should match snapshot', () => {
+        expect(wrapper.element).toMatchSnapshot();
+      });
+    });
+    describe('to and href property are not defined', () => {
+      beforeEach(() => {
+        wrapper.setProps({
+          to: null,
+          href: null
+        });
+      });
+      it('Should match snapshot', () => {
+        expect(wrapper.element).toMatchSnapshot();
+      });
+    });
+  });
+
+  describe('component property', () => {
     it('Should be <a> tag when href is provded', () => {
       wrapper.setProps({
         href: 'linkUrl'
@@ -58,6 +95,21 @@ describe('link mixin', () => {
         to: 'linkUrl'
       });
       expect(wrapper.vm.component).toEqual('RouterLink');
+    });
+  });
+
+  describe('target property', () => {
+    it('Should return  "_blank" if neWindow property equals true', () => {
+      wrapper.setProps({
+        newWindow: true
+      });
+      expect(wrapper.vm.target).toEqual('_blank');
+    });
+    it('Should return  "_self" if neWindow property equals false', () => {
+      wrapper.setProps({
+        newWindow: false
+      });
+      expect(wrapper.vm.target).toEqual('_self');
     });
   });
 });
