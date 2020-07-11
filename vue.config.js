@@ -1,3 +1,10 @@
 module.exports = {
-  lintOnSave: true
+  lintOnSave: true,
+  css: {
+    loaderOptions: {
+      sass: {
+        prependData: '@import "~@/styles/index.scss";'
+      }
+    }
+  }
 };

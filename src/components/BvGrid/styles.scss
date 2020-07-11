@@ -1,0 +1,26 @@
+.bv-grid {
+  $root: &;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0 (-$layout-spacer);
+  @for $i from 1 through $layout-max-cols {
+    &--cols-xs-#{$i} {
+      #{$root}__item {
+        width: calc(#{percentage($i / $layout-max-cols)} - 2 * #{$layout-spacer});
+      }
+    }
+  }
+  $breakpoints: sm, md, lg;
+  @each $breakpoint in $breakpoints {
+    @for $i from 1 through $layout-max-cols {
+      &--cols-#{$breakpoint}-#{$i} {
+        #{$root}__item {
+          @include breakpoint($breakpoint) {
+            width: calc(#{percentage($i / $layout-max-cols)} - 2 * #{$layout-spacer});
+          }
+        }
+      }
+    }
+  }
+}
