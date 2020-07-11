@@ -14,7 +14,7 @@
 
 <script lang="ts">
 import { PropOptions } from 'vue';
-import mixins from 'vue-typed-mixins';
+import mixins from '@/helpers/mixins';
 import { setColorClass } from '@/helpers/set-color-class';
 import { ColorsSettings } from '@/types';
 import { BasicAppearanceProps, ShapeAppearanceProps, LinkBehaviourProps } from '@/mixins/commonPropsMixin';
