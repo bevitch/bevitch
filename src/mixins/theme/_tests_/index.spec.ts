@@ -17,6 +17,7 @@ describe('theme mixin', () => {
       <div
         :dark="dark"
         :light="light"
+        :class="themeClasses"
       />
     `
   });
@@ -36,7 +37,28 @@ describe('theme mixin', () => {
     expect(wrapper.isVueInstance()).toBe(true);
   });
 
-  it('Should match snapshot', () => {
-    expect(wrapper.element).toMatchSnapshot();
+  describe('Snapshots', () => {
+    describe('dark property equals true and light property equals false', () => {
+      beforeEach(() => {
+        wrapper.setProps({
+          dark: true,
+          light: false
+        });
+      });
+      it('Should match snapshot', () => {
+        expect(wrapper.element).toMatchSnapshot();
+      });
+    });
+    describe('dark property equals false and light property equals true', () => {
+      beforeEach(() => {
+        wrapper.setProps({
+          dark: false,
+          light: true
+        });
+      });
+      it('Should match snapshot', () => {
+        expect(wrapper.element).toMatchSnapshot();
+      });
+    });
   });
 });
