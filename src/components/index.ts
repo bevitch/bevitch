@@ -3,3 +3,5 @@ export * from './BvButton';
 export * from './BvContentWrapper';
 export * from './BvGrid';
 export * from './BvLoader';
+export * from './BvCheckbox';
+export * from './BvSelect';
