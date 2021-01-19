@@ -14,7 +14,9 @@ $icon-list: (
 
 .bv-icon {
   display: inline-block;
+  height: var(--bv-icon-size);
   &:before {
+    font-size: var(--bv-icon-size);
     font-family: $icon-font;
     line-height: 1;
   }

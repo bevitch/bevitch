@@ -3,12 +3,13 @@
     Close -
     <BvIcon 
       name="close" 
-      class="bv--text-color-primary"
+      class="bv--text-color-primary icon"
     />
 
     Check-mark - 
     <BvIcon 
       name="check-mark" 
+      size="30px"
       class="bv--text-color-primary"
     />
   </div>
@@ -22,3 +23,9 @@ export default {
   components: { BvIcon }
 };
 </script>
+
+<style lang="scss">
+.icon {
+  font-size: 40px;
+}
+</style>

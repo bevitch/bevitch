@@ -3,6 +3,7 @@
     aria-hidden="true"
     class="bv-icon" 
     :class="nameClass"
+    :style="style"
   />
 </template>
 
@@ -15,11 +16,18 @@ export default Vue.extend({
     name: {
       type: String,
       default: ''
+    } as PropOptions<string>,
+    size: {
+      type: String,
+      default: 'inherit'
     } as PropOptions<string>
   },
   computed: {
     nameClass ():string {
       return this.name ? `bv-icon--${this.name}` : '';
+    },
+    style(): Object {
+      return [{ '--bv-icon-size': this.size }];
     }
   }
 });
