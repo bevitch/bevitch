@@ -1,0 +1,30 @@
+$icon-font: Roboto !default;
+
+$icon-list: (
+  'check-mark': 2713,
+  'copyright': 00A9,
+  'right-arrow':2192,
+  'left-arrow': 2190,
+  'close': 00D7
+) !default;
+
+@mixin variable-icon-font($icon-code) {
+  content: #{"\"\\"}#{$icon-code + "\""};
+}
+
+.bv-icon {
+  display: inline-block;
+  &:before {
+    font-family: $icon-font;
+    line-height: 1;
+  }
+  @each $name, $char in $icon-list {
+    &--#{$name} {
+      &:before {
+        @include variable-icon-font($char);
+      }
+    }
+  }
+}
+
+
