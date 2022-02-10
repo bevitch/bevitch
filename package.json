@@ -46,7 +46,7 @@
     "inquirer": "^7.3.1",
     "lint-staged": "^9.5.0",
     "lodash": "^4.17.19",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "power-assert": "^1.6.1",
     "replace-in-file": "^6.1.0",
     "sass-lint": "^1.13.1",
